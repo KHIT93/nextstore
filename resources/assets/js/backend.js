@@ -5,8 +5,29 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+import './bootstrap';
 
+import Vuetify from 'vuetify';
+import VueRouter from 'vue-router'
+import Home from './components/Backend/Home.vue';
+import Orders from './components/Backend/Orders.vue';
+import NotFound from './components/Backend/NotFound.vue';
+
+
+Vue.use(Vuetify);
+Vue.use(VueRouter);
+
+const routes = [
+    { path: '/', component: Home },
+    { path: '/orders', component: Orders },
+
+    /*Catchall route to display 404 page*/
+    { path: '*', component: NotFound }
+];
+
+const router = new VueRouter({
+    routes
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -15,5 +36,27 @@ require('./bootstrap');
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router,
+    data:
+    {
+        menu: [
+            { icon: 'home', title: 'Home', link: '/'},
+            { icon: 'shopping_cart', title: 'Orders', link: '/orders'},
+            { icon: 'people', title: 'Customers', link: '/customers'},
+            { icon: 'book', title: 'Products', link: '/products'},
+            { icon: 'loyalty', title: 'Categories', link: '/categories'},
+            { icon: 'description', title: 'Pages', link: '/pages'},
+            { icon: 'settings', title: 'Configuration', link: '/configuration'},
+        ]
+    },
+    methods:
+    {
+        logout()
+        {
+            axios.post('/logout', {}).then(function(){
+                window.location.href = '/';
+            });
+        }
+    }
 });

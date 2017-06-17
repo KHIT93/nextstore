@@ -10066,3 +10066,23 @@ table.table tfoot tr {
 [v-cloak] {
   display: none;
 }
+.navigation-drawer--persistent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right):not(.navigation-drawer--clipped) ~ .toolbar,
+.navigation-drawer--permanent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right):not(.navigation-drawer--clipped) ~ .toolbar {
+  padding-left: 300px;
+}
+.navigation-drawer--persistent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right) ~ main,
+.navigation-drawer--permanent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right) ~ main,
+.navigation-drawer--persistent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right) ~ .footer:not(.footer--fixed):not(.footer--absolute),
+.navigation-drawer--permanent.navigation-drawer--open:not(.navigation-drawer--is-mobile):not(.navigation-drawer--right) ~ .footer:not(.footer--fixed):not(.footer--absolute) {
+  padding-left: 300px;
+}
+.navigation-drawer--persistent.navigation-drawer--open.navigation-drawer--right:not(.navigation-drawer--clipped) + .toolbar,
+.navigation-drawer--permanent.navigation-drawer--open.navigation-drawer--right:not(.navigation-drawer--clipped) + .toolbar {
+  padding-right: 300px;
+}
+.navigation-drawer--persistent.navigation-drawer--open.navigation-drawer--right ~ main,
+.navigation-drawer--permanent.navigation-drawer--open.navigation-drawer--right ~ main,
+.navigation-drawer--persistent.navigation-drawer--open.navigation-drawer--right ~ .footer:not(.footer--fixed):not(.footer--absolute),
+.navigation-drawer--permanent.navigation-drawer--open.navigation-drawer--right ~ .footer:not(.footer--fixed):not(.footer--absolute) {
+  padding-right: 300px;
+}
