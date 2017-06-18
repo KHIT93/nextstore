@@ -16,7 +16,7 @@ class RedirectToSecureSite
      */
     public function handle(Request $request, Closure $next)
     {
-        if(!$request->secure() && !\App::environment(['local', 'staging']))
+        if(!$request->secure() && !\App::environment(['local', 'staging', 'testing']))
         {
             return redirect()->secure($request->getRequestUri());
         }
