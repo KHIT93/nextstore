@@ -26,7 +26,9 @@ class ProductsController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-        return Product::create($request->all());
+        $product = Product::create($request->all());
+        $product->metadata()->create($request['metadata']);
+        return $product;
     }
 
     /**
@@ -50,6 +52,14 @@ class ProductsController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update($request->all());
+        if($product->metadata)
+        {
+            $product->metadata()->save($request['metadata']);
+        }
+        else
+        {
+            $product->metadata()->create($request['metadata']);
+        }
         return $product->fresh();
     }
 

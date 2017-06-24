@@ -25,7 +25,9 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        return Category::create($request->all());
+        $category = Category::create($request->all());
+        $category->metadata()->create($request['metadata']);
+        return $category;
     }
 
     /**
@@ -49,6 +51,14 @@ class CategoriesController extends Controller
     public function update(Request $request, Category $category)
     {
         $category->update($request->all());
+        if($category->metadata)
+        {
+            $category->metadata()->save($request['metadata']);
+        }
+        else
+        {
+            $category->metadata()->create($request['metadata']);
+        }
 
         return $category->fresh();
     }
