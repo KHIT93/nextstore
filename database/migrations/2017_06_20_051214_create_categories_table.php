@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMetadataTable extends Migration
+class CreateCategoriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateMetadataTable extends Migration
      */
     public function up()
     {
-        Schema::create('metadata', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable();
-            $table->string('description')->nullable();
-            $table->string('keywords')->nullable();
-            $table->integer('entity_id');
-            $table->string('entity_type');
+            $table->string('name');
+            $table->unsignedInteger('parent_id')->nullable();
+            $table->text('body')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateMetadataTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('metadata');
+        Schema::dropIfExists('categories');
     }
 }

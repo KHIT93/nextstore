@@ -8,9 +8,13 @@
 import './bootstrap';
 
 import Vuetify from 'vuetify';
-import VueRouter from 'vue-router'
+import VueRouter from 'vue-router';
 import Home from './components/Backend/Home.vue';
 import Orders from './components/Backend/Orders.vue';
+import ProductsIndex from './components/Backend/ProductsIndex.vue';
+import ProductsForm from './components/Backend/ProductsForm.vue';
+import CategoriesIndex from './components/Backend/CategoriesIndex.vue';
+import CategoriesForm from './components/Backend/CategoriesForm.vue';
 import NotFound from './components/Backend/NotFound.vue';
 
 
@@ -18,10 +22,16 @@ Vue.use(Vuetify);
 Vue.use(VueRouter);
 
 const routes = [
-    { path: '/', component: Home },
-    { path: '/orders', component: Orders },
+    { path: '/', component: Home, name: 'home' },
+    { path: '/orders', component: Orders, name: 'orders.index' },
+    { path: '/products', component: ProductsIndex, name: 'products.index' },
+    { path: '/products/create', component: ProductsForm, name: 'products.create' },
+    { path: '/products/:id', component: ProductsForm, props: true, name: 'products.edit' },
+    { path: '/categories', component: CategoriesIndex, name: 'categories.index' },
+    { path: '/categories/create', component: CategoriesForm, name: 'categories.create' },
+    { path: '/categories/:id', component: CategoriesForm, props: true, name: 'categories.edit' },
 
-    /*Catchall route to display 404 page*/
+    /** Catchall route to display 404 page */
     { path: '*', component: NotFound }
 ];
 
@@ -43,7 +53,7 @@ const app = new Vue({
         menu: [
             { icon: 'home', title: 'Home', link: '/'},
             { icon: 'shopping_cart', title: 'Orders', link: '/orders'},
-            { icon: 'people', title: 'Customers', link: '/customers'},
+            { icon: 'contacts', title: 'Customers', link: '/customers'},
             { icon: 'book', title: 'Products', link: '/products'},
             { icon: 'loyalty', title: 'Categories', link: '/categories'},
             { icon: 'description', title: 'Pages', link: '/pages'},

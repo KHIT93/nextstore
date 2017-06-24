@@ -13,13 +13,9 @@ use Faker\Generator as Faker;
 |
 */
 
-$factory->define(App\Models\Product::class, function (Faker $faker) {
+$factory->define(App\Models\Category::class, function (Faker $faker) {
     return [
-        'name' => ucfirst($faker->word),
-        'teaser' => $faker->sentence,
-        'category_id' => null,
-        'description' => $faker->paragraph,
-        'body' => $faker->paragraph,
-        'price' => 0
+        'name' => $faker->word,
+        'parent_id' => 0
     ];
 });

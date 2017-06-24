@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Http\Requests\CreateProductRequest;
 
-class ProductController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return Product::all();
     }
 
     /**
@@ -33,9 +24,9 @@ class ProductController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CreateProductRequest $request)
     {
-        //
+        return Product::create($request->all());
     }
 
     /**
@@ -46,18 +37,7 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Product $product)
-    {
-        //
+        return $product;
     }
 
     /**
@@ -69,7 +49,8 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $product->update($request->all());
+        return $product->fresh();
     }
 
     /**
@@ -80,6 +61,11 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        //
+        //If a product is assigned to orders, only softdelete it.
+        $product->delete();
+        //Otherwise permanently delete it.
+        $product->forceDelete();
+
+        return response(['OK'], 200);
     }
 }

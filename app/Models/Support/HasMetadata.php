@@ -9,6 +9,6 @@ trait HasMetadata
      */
     public function metadata()
     {
-        return $this->morphMany('App\Models\Metadata', 'entity');
+        return $this->morphOne('App\Models\Metadata', 'entity');
     }
 }

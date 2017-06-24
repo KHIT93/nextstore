@@ -10086,3 +10086,7 @@ table.table tfoot tr {
 .navigation-drawer--permanent.navigation-drawer--open.navigation-drawer--right ~ .footer:not(.footer--fixed):not(.footer--absolute) {
   padding-right: 300px;
 }
+.fab {
+  bottom: 5%;
+  right: 2%;
+}
