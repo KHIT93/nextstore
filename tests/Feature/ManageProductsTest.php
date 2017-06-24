@@ -54,7 +54,7 @@ class ManageProductsTest extends TestCase
         $response = $this->json('PATCH', '/webapi/products/'.$product->id, $product->toArray());
 
         $response->assertStatus(200);
-        $response->assertSee($product->name);
+        $response->assertSee($productText);
     }
 
     /** @test */

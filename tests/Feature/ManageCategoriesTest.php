@@ -54,6 +54,6 @@ class ManageCategoriesTest extends TestCase
         $response = $this->json('PATCH', '/webapi/categories/'.$category->id, $category->toArray());
 
         $response->assertStatus(200);
-        $response->assertSee($category->name);
+        $response->assertSee($categoryText);
     }
 }
