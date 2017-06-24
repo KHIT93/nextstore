@@ -33,4 +33,10 @@ Route::prefix('webapi')->group(function(){
     Route::get('/categories/{category}', 'CategoriesController@show')->name('webapi.categories.show');
     Route::patch('/categories/{category}', 'CategoriesController@update')->name('webapi.categories.update');
     Route::delete('/categories/{category}', 'CategoriesController@destroy')->name('webapi.categories.destroy');
+
+    Route::get('/pages', 'PagesController@index')->name('webapi.pages.index');
+    Route::put('/pages', 'PagesController@store')->name('webapi.pages.create');
+    Route::get('/pages/{page}', 'PagesController@show')->name('webapi.pages.show');
+    Route::patch('/pages/{page}', 'PagesController@update')->name('webapi.pages.update');
+    Route::delete('/pages/{page}', 'PagesController@destroy')->name('webapi.pages.destroy');
 });

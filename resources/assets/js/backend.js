@@ -15,6 +15,8 @@ import ProductsIndex from './components/Backend/ProductsIndex.vue';
 import ProductsForm from './components/Backend/ProductsForm.vue';
 import CategoriesIndex from './components/Backend/CategoriesIndex.vue';
 import CategoriesForm from './components/Backend/CategoriesForm.vue';
+import PagesIndex from './components/Backend/PagesIndex.vue';
+import PagesForm from './components/Backend/PagesForm.vue';
 import NotFound from './components/Backend/NotFound.vue';
 
 
@@ -30,6 +32,9 @@ const routes = [
     { path: '/categories', component: CategoriesIndex, name: 'categories.index' },
     { path: '/categories/create', component: CategoriesForm, name: 'categories.create' },
     { path: '/categories/:id', component: CategoriesForm, props: true, name: 'categories.edit' },
+    { path: '/pages', component: PagesIndex, name: 'pages.index' },
+    { path: '/pages/create', component: PagesForm, name: 'pages.create' },
+    { path: '/pages/:id', component: PagesForm, props: true, name: 'pages.edit' },
 
     /** Catchall route to display 404 page */
     { path: '*', component: NotFound }
