@@ -11,14 +11,14 @@
   },
   "devDependencies": {
     "axios": "^0.15.3",
-    "bootstrap": "^4.0.0alpha.6",
+    "bootstrap": "^4.0.0-alpha.6",
     "cross-env": "^3.2.3",
-    "laravel-mix": "1.0.0beta.1",
+    "laravel-mix": "1.0.3",
     "lodash": "^4.17.4",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.1",
     "vue": "^2.3.2",
-    "vue-router": "^2.5.3",
+    "vue-router": "^2.6.0",
     "vuetify": "^0.12.7"
   }
 }
