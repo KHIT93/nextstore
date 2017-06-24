@@ -14,7 +14,7 @@ class Category extends Model
         'body'
     ];
 
-    protected $with = ['children'];
+    protected $with = ['children', 'metadata'];
 
     public function parent()
     {

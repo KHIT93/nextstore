@@ -17,4 +17,6 @@ class Product extends Model
         'price',
         'image_path'
     ];
+
+    protected $with = ['metadata'];
 }
