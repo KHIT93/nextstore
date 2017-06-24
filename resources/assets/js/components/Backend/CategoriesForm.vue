@@ -149,11 +149,11 @@
             {
                 axios.get('/webapi/categories/' + this.form.id).then(function(response){
                     this.form.name = response.data.name;
-                    this.form.category_id = response.data.category_id;
-                    this.form.teaser = response.data.teaser;
-                    this.form.description = response.data.description;
+                    this.form.parent_id = response.data.parent_id;
                     this.form.body = response.data.body;
-                    this.form.price = response.data.price;
+                    this.form.metadata.title = response.data.metadata.title;
+                    this.form.metadata.keywords = response.data.metadata.keywords;
+                    this.form.metadata.description = response.data.metadata.description;
                 }.bind(this));
             },
             getCategories()

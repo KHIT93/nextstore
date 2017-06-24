@@ -205,6 +205,9 @@
                     this.form.description = response.data.description;
                     this.form.body = response.data.body;
                     this.form.price = response.data.price;
+                    this.form.metadata.title = response.data.metadata.title;
+                    this.form.metadata.keywords = response.data.metadata.keywords;
+                    this.form.metadata.description = response.data.metadata.description;
                 }.bind(this));
             },
             getCategories()
