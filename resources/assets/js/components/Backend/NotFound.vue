@@ -1,10 +1,11 @@
 <template>
     <v-layout>
         <v-flex sm8 offset-sm2>
+
             <v-card>
                 <v-card-row>
                     <v-card-title>
-                        Page not found
+                        <v-icon x-large class="red--text">error_outline</v-icon> Page not found
                     </v-card-title>
                 </v-card-row>
                 <v-card-text>

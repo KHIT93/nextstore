@@ -24,7 +24,7 @@
 <body>
     <div id="app">
         <v-app>
-            <v-navigation-drawer permanent clipped light>
+            <v-navigation-drawer persistent clipped enable-resize-watcher light v-model="drawer" :mini-variant.sync="mini">
                 <v-list dense class="pt-0">
                     <template v-for="(item, i) in menu">
                     <v-list-group v-if="item.children" v-model="item.model" no-action>
@@ -71,6 +71,7 @@
                 </template>
             </v-navigation-drawer>
             <v-toolbar class="red" light>
+                <v-toolbar-side-icon light @click.native.stop="drawer = !drawer"></v-toolbar-side-icon>
                 <v-toolbar-title>{{ config('app.name', 'NeXTStore') }}</v-toolbar-title>
                 <v-toolbar-items>
                     <v-menu left bottom origin="bottom right" transition="v-slide-y-transition">

@@ -66,7 +66,9 @@ const app = new Vue({
                 { icon: 'description', title: 'Menu', link: '/menu'},
             ]},
             { icon: 'settings', title: 'Configuration', link: '/configuration'},
-        ]
+        ],
+        drawer: true,
+        mini: false,
     },
     methods:
     {

@@ -31609,7 +31609,9 @@ var app = new Vue({
     el: '#app',
     router: router,
     data: {
-        menu: [{ icon: 'home', title: 'Home', link: '/' }, { icon: 'shopping_cart', title: 'Orders', link: '/orders' }, { icon: 'contacts', title: 'Customers', link: '/customers' }, { icon: 'book', title: 'Products', link: '/products' }, { icon: 'loyalty', title: 'Categories', link: '/categories' }, { icon: 'description', title: 'Pages', model: false, children: [{ icon: 'description', title: 'Web pages', link: '/pages' }, { icon: 'description', title: 'Menu', link: '/menu' }] }, { icon: 'settings', title: 'Configuration', link: '/configuration' }]
+        menu: [{ icon: 'home', title: 'Home', link: '/' }, { icon: 'shopping_cart', title: 'Orders', link: '/orders' }, { icon: 'contacts', title: 'Customers', link: '/customers' }, { icon: 'book', title: 'Products', link: '/products' }, { icon: 'loyalty', title: 'Categories', link: '/categories' }, { icon: 'description', title: 'Pages', model: false, children: [{ icon: 'description', title: 'Web pages', link: '/pages' }, { icon: 'description', title: 'Menu', link: '/menu' }] }, { icon: 'settings', title: 'Configuration', link: '/configuration' }],
+        drawer: true,
+        mini: false
     },
     methods: {
         logout: function logout() {
@@ -41253,12 +41255,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -41343,7 +41339,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "xs12": ""
     }
-  }, [_c('v-card', [_c('v-card-text', [_c('v-card-row', [_c('v-tabs', {
+  }, [_c('v-tabs', {
     attrs: {
       "id": "form-tabs",
       "grow": "",
@@ -41358,17 +41354,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "active"
     }
   }, [_c('v-tabs-bar', {
+    staticClass: "red",
     slot: "activators"
   }, [_c('v-tabs-item', {
     attrs: {
       "href": "#form-tabs-basic-data"
     }
-  }, [_vm._v("\n                                Basic data\n                            ")]), _vm._v(" "), _c('v-tabs-item', {
+  }, [_vm._v("\n                    Basic data\n                ")]), _vm._v(" "), _c('v-tabs-item', {
     attrs: {
       "href": "#form-tabs-metadata",
       "ripple": ""
     }
-  }, [_vm._v("\n                                Metadata\n                            ")]), _vm._v(" "), _c('v-tabs-slider')], 1), _vm._v(" "), _c('v-tabs-content', {
+  }, [_vm._v("\n                    Metadata\n                ")]), _vm._v(" "), _c('v-tabs-slider')], 1), _vm._v(" "), _c('v-tabs-content', {
     attrs: {
       "id": "form-tabs-basic-data"
     }
@@ -41573,7 +41570,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "form.metadata.description"
     }
-  })], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
+  })], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
     staticClass: "green",
     nativeOn: {
       "click": function($event) {
@@ -41983,12 +41980,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -42066,7 +42057,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "xs12": ""
     }
-  }, [_c('v-card', [_c('v-card-text', [_c('v-card-row', [_c('v-tabs', {
+  }, [_c('v-tabs', {
     attrs: {
       "id": "form-tabs",
       "grow": "",
@@ -42081,17 +42072,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "active"
     }
   }, [_c('v-tabs-bar', {
+    staticClass: "red",
     slot: "activators"
   }, [_c('v-tabs-item', {
     attrs: {
       "href": "#form-tabs-basic-data"
     }
-  }, [_vm._v("\n                                Basic data\n                            ")]), _vm._v(" "), _c('v-tabs-item', {
+  }, [_vm._v("\n                    Basic data\n                ")]), _vm._v(" "), _c('v-tabs-item', {
     attrs: {
       "href": "#form-tabs-metadata",
       "ripple": ""
     }
-  }, [_vm._v("\n                                Metadata\n                            ")]), _vm._v(" "), _c('v-tabs-slider')], 1), _vm._v(" "), _c('v-tabs-content', {
+  }, [_vm._v("\n                    Metadata\n                ")]), _vm._v(" "), _c('v-tabs-slider')], 1), _vm._v(" "), _c('v-tabs-content', {
     attrs: {
       "id": "form-tabs-basic-data"
     }
@@ -42228,7 +42220,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "form.metadata.description"
     }
-  })], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
+  })], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
     staticClass: "green",
     nativeOn: {
       "click": function($event) {
@@ -42631,12 +42623,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -42711,7 +42697,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "xs12": ""
     }
-  }, [_c('v-card', [_c('v-card-text', [_c('v-card-row', [_c('v-tabs', {
+  }, [_c('v-tabs', {
     attrs: {
       "id": "form-tabs",
       "grow": "",
@@ -42726,17 +42712,18 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       expression: "active"
     }
   }, [_c('v-tabs-bar', {
+    staticClass: "red",
     slot: "activators"
   }, [_c('v-tabs-item', {
     attrs: {
       "href": "#form-tabs-basic-data"
     }
-  }, [_vm._v("\n                                Basic data\n                            ")]), _vm._v(" "), _c('v-tabs-item', {
+  }, [_vm._v("\n                    Basic data\n                ")]), _vm._v(" "), _c('v-tabs-item', {
     attrs: {
       "href": "#form-tabs-metadata",
       "ripple": ""
     }
-  }, [_vm._v("\n                                Metadata\n                            ")]), _vm._v(" "), _c('v-tabs-slider')], 1), _vm._v(" "), _c('v-tabs-content', {
+  }, [_vm._v("\n                    Metadata\n                ")]), _vm._v(" "), _c('v-tabs-slider')], 1), _vm._v(" "), _c('v-tabs-content', {
     attrs: {
       "id": "form-tabs-basic-data"
     }
@@ -42870,7 +42857,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       },
       expression: "form.metadata.description"
     }
-  })], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
+  })], 1)], 1)], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
     staticClass: "green",
     nativeOn: {
       "click": function($event) {
@@ -42956,6 +42943,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -42973,7 +42961,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "sm8": "",
       "offset-sm2": ""
     }
-  }, [_c('v-card', [_c('v-card-row', [_c('v-card-title', [_vm._v("\n                    Page not found\n                ")])], 1), _vm._v(" "), _c('v-card-text', [_c('v-card-row', [_vm._v("\n                    Whoops! The page you were looking for does not seem to exist.\n                ")])], 1)], 1)], 1)], 1)
+  }, [_c('v-card', [_c('v-card-row', [_c('v-card-title', [_c('v-icon', {
+    staticClass: "red--text",
+    attrs: {
+      "x-large": ""
+    }
+  }, [_vm._v("error_outline")]), _vm._v(" Page not found\n                ")], 1)], 1), _vm._v(" "), _c('v-card-text', [_c('v-card-row', [_vm._v("\n                    Whoops! The page you were looking for does not seem to exist.\n                ")])], 1)], 1)], 1)], 1)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
