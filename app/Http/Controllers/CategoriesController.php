@@ -14,7 +14,22 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        return Category::all();
+        if(request()->has('nochildren') && request()->has('noparent'))
+        {
+            return Category::all();
+        }
+        else if(request()->has('nochildren'))
+        {
+            return Category::with('parent')->get();
+        }
+        else if(request()->has('noparent'))
+        {
+            return Category::with('children')->get();
+        }
+        else
+        {
+            return Category::with('parent', 'children')->get();
+        }
     }
 
     /**

@@ -14,7 +14,8 @@
                     <tr v-for="category in categories">
                         <td>{{ category.id }}</td>
                         <td>{{ category.name }}</td>
-                        <td>{{ category.parent_id }}</td>
+                        <td v-if="category.parent_id != null">{{ category.parent.name }}</td>
+                        <td v-if="category.parent_id == null"></td>
                         <td>
                             <v-btn icon :to="{ name: 'categories.edit', params: { id: category.id }}" router>
                                 <v-icon>edit</v-icon>
@@ -65,7 +66,7 @@
         {
             getcategories()
             {
-                axios.get('/webapi/categories').then(function(response){
+                axios.get('/webapi/categories?nochildren').then(function(response){
                     this.categories = response.data;
                 }.bind(this))
                 .catch(function(error)

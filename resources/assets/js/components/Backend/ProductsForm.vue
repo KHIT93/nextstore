@@ -212,7 +212,7 @@
             },
             getCategories()
             {
-                axios.get('/webapi/categories').then(function(response){
+                axios.get('/webapi/categories?nochildren&noparent').then(function(response){
                     response.data.forEach(function(item, index){
                         this.categories.push(new Category(item.id, item.name));
                     }.bind(this));

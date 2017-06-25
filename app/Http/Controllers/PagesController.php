@@ -26,7 +26,7 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         $page = Page::create($request->all());
-        $page->metadata()->create($request['metadata']):
+        $page->metadata()->create($request['metadata']);
         return $page;
     }
 

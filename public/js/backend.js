@@ -40909,6 +40909,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -40971,7 +40973,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Category")]), _vm._v(" "), _c('th', {
     staticClass: "text-xs-left"
   }, [_vm._v("Price")]), _vm._v(" "), _c('th')])]), _vm._v(" "), _c('tbody', _vm._l((_vm.products), function(product) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(product.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.category_id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.price))]), _vm._v(" "), _c('td', [_c('v-btn', {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(product.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.category_id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.price))]), _vm._v(" "), (product.category_id != null) ? _c('td', [_vm._v(_vm._s(product.category.name))]) : _vm._e(), _vm._v(" "), (product.category_id == null) ? _c('td') : _vm._e(), _vm._v(" "), _c('td', [_c('v-btn', {
       attrs: {
         "icon": "",
         "to": {
@@ -41306,7 +41308,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }.bind(this));
         },
         getCategories: function getCategories() {
-            axios.get('/webapi/categories').then(function (response) {
+            axios.get('/webapi/categories?nochildren&noparent').then(function (response) {
                 response.data.forEach(function (item, index) {
                     this.categories.push(new __WEBPACK_IMPORTED_MODULE_1__classes_Category__["a" /* default */](item.id, item.name));
                 }.bind(this));
@@ -41687,6 +41689,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -41703,7 +41706,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     methods: {
         getcategories: function getcategories() {
-            axios.get('/webapi/categories').then(function (response) {
+            axios.get('/webapi/categories?nochildren').then(function (response) {
                 this.categories = response.data;
             }.bind(this)).catch(function (error) {
                 console.log(error);
@@ -41747,7 +41750,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Category Name")]), _vm._v(" "), _c('th', {
     staticClass: "text-xs-left"
   }, [_vm._v("Parent")]), _vm._v(" "), _c('th')])]), _vm._v(" "), _c('tbody', _vm._l((_vm.categories), function(category) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(category.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(category.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(category.parent_id))]), _vm._v(" "), _c('td', [_c('v-btn', {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(category.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(category.name))]), _vm._v(" "), (category.parent_id != null) ? _c('td', [_vm._v(_vm._s(category.parent.name))]) : _vm._e(), _vm._v(" "), (category.parent_id == null) ? _c('td') : _vm._e(), _vm._v(" "), _c('td', [_c('v-btn', {
       attrs: {
         "icon": "",
         "to": {
@@ -42405,7 +42408,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Author")]), _vm._v(" "), _c('th', {
     staticClass: "text-xs-left"
   }, [_vm._v("Published")]), _vm._v(" "), _c('th')])]), _vm._v(" "), _c('tbody', _vm._l((_vm.pages), function(page) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(page.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(page.title))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(page.author_id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(page.published))]), _vm._v(" "), _c('td', [_c('v-btn', {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(page.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(page.title))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(page.author.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(page.published))]), _vm._v(" "), _c('td', [_c('v-btn', {
       attrs: {
         "icon": "",
         "to": {

@@ -15,7 +15,7 @@
                     <tr v-for="page in pages">
                         <td>{{ page.id }}</td>
                         <td>{{ page.title }}</td>
-                        <td>{{ page.author_id }}</td>
+                        <td>{{ page.author.name }}</td>
                         <td>{{ page.published }}</td>
                         <td>
                             <v-btn icon :to="{ name: 'pages.edit', params: { id: page.id }}" router>
