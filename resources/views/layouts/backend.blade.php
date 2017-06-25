@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'NeXTStore') }}</title>
+    <title>{{ config('app.name', 'NeXTStore') }} Backend</title>
     <!-- Font library and icon pack -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
     <!-- Styles -->
