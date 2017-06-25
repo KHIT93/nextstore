@@ -31609,7 +31609,7 @@ var app = new Vue({
     el: '#app',
     router: router,
     data: {
-        menu: [{ icon: 'home', title: 'Home', link: '/' }, { icon: 'shopping_cart', title: 'Orders', link: '/orders' }, { icon: 'contacts', title: 'Customers', link: '/customers' }, { icon: 'book', title: 'Products', link: '/products' }, { icon: 'loyalty', title: 'Categories', link: '/categories' }, { icon: 'description', title: 'Pages', link: '/pages' }, { icon: 'settings', title: 'Configuration', link: '/configuration' }]
+        menu: [{ icon: 'home', title: 'Home', link: '/' }, { icon: 'shopping_cart', title: 'Orders', link: '/orders' }, { icon: 'contacts', title: 'Customers', link: '/customers' }, { icon: 'book', title: 'Products', link: '/products' }, { icon: 'loyalty', title: 'Categories', link: '/categories' }, { icon: 'description', title: 'Pages', model: false, children: [{ icon: 'description', title: 'Web pages', link: '/pages' }, { icon: 'description', title: 'Menu', link: '/menu' }] }, { icon: 'settings', title: 'Configuration', link: '/configuration' }]
     },
     methods: {
         logout: function logout() {

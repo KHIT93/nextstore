@@ -26,17 +26,49 @@
         <v-app>
             <v-navigation-drawer permanent clipped light>
                 <v-list dense class="pt-0">
-                    <v-list-item v-for="item in menu" :key="item">
+                    <template v-for="(item, i) in menu">
+                    <v-list-group v-if="item.children" v-model="item.model" no-action>
+                        <v-list-item slot="item">
+                            <v-list-tile>
+                                <v-list-tile-action>
+                                    <v-icon>@{{ item.icon }}</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-content>
+                                    <v-list-tile-title>
+                                        @{{ item.title }}
+                                    </v-list-tile-title>
+                                </v-list-tile-content>
+                                <v-list-tile-action>
+                                    <v-icon>@{{ item.model ? 'keyboard_arrow_up' : 'keyboard_arrow_down' }}</v-icon>
+                                </v-list-tile-action>
+                            </v-list-tile>
+                        </v-list-item>
+                        <v-list-item v-for="(child, i) in item.children" :key="i">
+                            <v-list-tile :to=child.link router exact ripple>
+                                <v-list-tile-action v-if="child.icon">
+                                    <v-icon>@{{ child.icon }}</v-icon>
+                                </v-list-tile-action>
+                                <v-list-tile-content>
+                                    <v-list-tile-title>
+                                        @{{ child.title }}
+                                    </v-list-tile-title>
+                                </v-list-tile-content>
+                            </v-list-tile>
+                        </v-list-item>
+                    </v-list-group>
+                    <v-list-item v-else>
                         <v-list-tile :to=item.link router exact ripple>
                             <v-list-tile-action>
                                 <v-icon>@{{ item.icon }}</v-icon>
                             </v-list-tile-action>
                             <v-list-tile-content>
-                                <v-list-tile-title>@{{ item.title }}</v-list-tile-title>
+                                <v-list-tile-title>
+                                    @{{ item.title }}
+                                </v-list-tile-title>
                             </v-list-tile-content>
                         </v-list-tile>
                     </v-list-item>
-                </v-list>
+                </template>
             </v-navigation-drawer>
             <v-toolbar class="red" light>
                 <v-toolbar-title>{{ config('app.name', 'NeXTStore') }}</v-toolbar-title>
