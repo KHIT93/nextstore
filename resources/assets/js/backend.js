@@ -17,6 +17,7 @@ import CategoriesIndex from './components/Backend/CategoriesIndex.vue';
 import CategoriesForm from './components/Backend/CategoriesForm.vue';
 import PagesIndex from './components/Backend/PagesIndex.vue';
 import PagesForm from './components/Backend/PagesForm.vue';
+import LoginForm from './components/Backend/LoginForm.vue';
 import NotFound from './components/Backend/NotFound.vue';
 
 
@@ -69,6 +70,9 @@ const app = new Vue({
         ],
         drawer: true,
         mini: false,
+    },
+    components: {
+        'v-login-form': LoginForm
     },
     methods:
     {

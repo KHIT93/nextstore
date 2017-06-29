@@ -31569,8 +31569,10 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_NotFound_vue__ = __webpack_require__(67);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_NotFound_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Backend_NotFound_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue__ = __webpack_require__(67);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue__ = __webpack_require__(70);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -31592,13 +31594,14 @@ if (inBrowser && window.Vue) {
 
 
 
+
 Vue.use(__WEBPACK_IMPORTED_MODULE_1_vuetify___default.a);
 Vue.use(vue_router_esm_defaultExport);
 
 var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Backend_Home_vue___default.a, name: 'home' }, { path: '/orders', component: __WEBPACK_IMPORTED_MODULE_4__components_Backend_Orders_vue___default.a, name: 'orders.index' }, { path: '/products', component: __WEBPACK_IMPORTED_MODULE_5__components_Backend_ProductsIndex_vue___default.a, name: 'products.index' }, { path: '/products/create', component: __WEBPACK_IMPORTED_MODULE_6__components_Backend_ProductsForm_vue___default.a, name: 'products.create' }, { path: '/products/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_Backend_ProductsForm_vue___default.a, props: true, name: 'products.edit' }, { path: '/categories', component: __WEBPACK_IMPORTED_MODULE_7__components_Backend_CategoriesIndex_vue___default.a, name: 'categories.index' }, { path: '/categories/create', component: __WEBPACK_IMPORTED_MODULE_8__components_Backend_CategoriesForm_vue___default.a, name: 'categories.create' }, { path: '/categories/:id', component: __WEBPACK_IMPORTED_MODULE_8__components_Backend_CategoriesForm_vue___default.a, props: true, name: 'categories.edit' }, { path: '/pages', component: __WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue___default.a, name: 'pages.index' }, { path: '/pages/create', component: __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default.a, name: 'pages.create' }, { path: '/pages/:id', component: __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default.a, props: true, name: 'pages.edit' },
 
 /** Catchall route to display 404 page */
-{ path: '*', component: __WEBPACK_IMPORTED_MODULE_11__components_Backend_NotFound_vue___default.a }];
+{ path: '*', component: __WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue___default.a }];
 
 var router = new vue_router_esm_defaultExport({
     routes: routes
@@ -31617,6 +31620,9 @@ var app = new Vue({
         menu: [{ icon: 'home', title: 'Home', link: '/' }, { icon: 'shopping_cart', title: 'Orders', link: '/orders' }, { icon: 'contacts', title: 'Customers', link: '/customers' }, { icon: 'book', title: 'Products', link: '/products' }, { icon: 'loyalty', title: 'Categories', link: '/categories' }, { icon: 'description', title: 'Pages', model: false, children: [{ icon: 'description', title: 'Web pages', link: '/pages' }, { icon: 'description', title: 'Menu', link: '/menu' }] }, { icon: 'settings', title: 'Configuration', link: '/configuration' }],
         drawer: true,
         mini: false
+    },
+    components: {
+        'v-login-form': __WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue___default.a
     },
     methods: {
         logout: function logout() {
@@ -42900,6 +42906,243 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
+Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/LoginForm.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] LoginForm.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-94b3e428", Component.options)
+  } else {
+    hotAPI.reload("data-v-94b3e428", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 68 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_Form__ = __webpack_require__(32);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    data: function data() {
+        return {
+            form: new __WEBPACK_IMPORTED_MODULE_0__classes_Form__["a" /* default */]({
+                email: '',
+                password: null
+            }),
+            active: true,
+            loading: false
+        };
+    },
+    methods: {
+        login: function login() {
+            this.form.post('/login').then(function (response) {
+                return window.location.href = response.path;
+            }).catch(function (error) {
+                return console.log(error);
+            });
+        }
+    }
+});
+
+/***/ }),
+/* 69 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-dialog', {
+    attrs: {
+      "persistent": "",
+      "width": "600"
+    },
+    model: {
+      value: (_vm.active),
+      callback: function($$v) {
+        _vm.active = $$v
+      },
+      expression: "active"
+    }
+  }, [_c('v-card', [_c('v-card-row', [_c('v-card-title', [_vm._v("Login")])], 1), _vm._v(" "), _c('v-card-row', [_c('v-card-text', [_c('form', {
+    attrs: {
+      "role": "form",
+      "method": "POST",
+      "action": "/login"
+    },
+    on: {
+      "submit": function($event) {
+        $event.preventDefault();
+        _vm.login($event)
+      }
+    }
+  }, [_c('v-layout', {
+    attrs: {
+      "row": ""
+    }
+  }, [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "name": "email",
+      "label": "Email",
+      "required": "",
+      "error": _vm.form.errors.has('email'),
+      "errors": _vm.form.errors.get('email'),
+      "type": "email",
+      "autofocus": ""
+    },
+    model: {
+      value: (_vm.form.email),
+      callback: function($$v) {
+        _vm.form.email = $$v
+      },
+      expression: "form.email"
+    }
+  })], 1)], 1), _vm._v(" "), _c('v-layout', {
+    attrs: {
+      "row": ""
+    }
+  }, [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "name": "password",
+      "label": "Password",
+      "required": "",
+      "error": _vm.form.errors.has('password'),
+      "errors": _vm.form.errors.get('password'),
+      "type": "password"
+    },
+    model: {
+      value: (_vm.form.password),
+      callback: function($$v) {
+        _vm.form.password = $$v
+      },
+      expression: "form.password"
+    }
+  })], 1)], 1), _vm._v(" "), _c('v-btn', {
+    staticClass: "deep-orange white--text",
+    attrs: {
+      "info": "",
+      "loading": _vm.loading,
+      "disabled": _vm.loading,
+      "type": "submit"
+    },
+    nativeOn: {
+      "click": function($event) {
+        _vm.loading = true
+      }
+    }
+  }, [_vm._v("\n                        Log in\n                        "), _c('span', {
+    staticClass: "custom-loader",
+    slot: "loader"
+  }, [_c('v-icon', [_vm._v("cached")])], 1)]), _vm._v(" "), _c('a', {
+    staticClass: "blue--text darken-1 btn btn--flat btn--raised",
+    attrs: {
+      "href": "/password/reset"
+    }
+  }, [_c('span', {
+    staticClass: "btn__content"
+  }, [_vm._v("Forgot Password?")])])], 1)])], 1), _vm._v(" "), _c('v-card-row', [_c('v-card-text', [_vm._v("Please note that this application depends on JavaScript, so it is required that this is enabled in your web browser")])], 1)], 1)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-94b3e428", module.exports)
+  }
+}
+
+/***/ }),
+/* 70 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(71),
+  /* template */
+  __webpack_require__(72),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
 Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/NotFound.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NotFound.vue: functional components are not supported with templates, they should use render functions.")}
@@ -42924,7 +43167,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 68 */
+/* 71 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -42957,7 +43200,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 69 */
+/* 72 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
