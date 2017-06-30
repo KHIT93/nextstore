@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 })->name('home');
 
+Route::get('images/{image}', 'ImagesController@show');
+
 Auth::routes();
 
 Route::prefix('backend')->group(function(){
@@ -30,6 +32,9 @@ Route::prefix('webapi')->group(function(){
         Route::patch('/products/{product}', 'ProductsController@update')->name('webapi.products.update');
         Route::delete('/products/{product}', 'ProductsController@destroy')->name('webapi.products.destroy');
 
+        Route::get('/products/{product}/images', 'ProductImagesController@show');
+        Route::post('/products/{product}/images', 'ProductImagesController@store');
+
         Route::get('/categories', 'CategoriesController@index')->name('webapi.categories.index');
         Route::put('/categories', 'CategoriesController@store')->name('webapi.categories.create');
         Route::get('/categories/{category}', 'CategoriesController@show')->name('webapi.categories.show');
@@ -41,5 +46,7 @@ Route::prefix('webapi')->group(function(){
         Route::get('/pages/{page}', 'PagesController@show')->name('webapi.pages.show');
         Route::patch('/pages/{page}', 'PagesController@update')->name('webapi.pages.update');
         Route::delete('/pages/{page}', 'PagesController@destroy')->name('webapi.pages.destroy');
+
+        Route::delete('/images/{image}', 'ImagesController@destroy');
     });
 });

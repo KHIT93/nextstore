@@ -103,6 +103,18 @@
                                     />
                                 </v-flex>
                             </v-layout>
+                            <v-layout>
+                                <v-flex xs12>
+                                    <v-layout>
+                                        <v-flex sm3 v-for="(image, index) in images" :key="image.id">
+                                            <v-product-image :imgid="image.id" @deleted="getImages" @selected="selectImage"/>
+                                        </v-flex>
+                                    </v-layout>
+                                    <v-dropzone v-if="form.id" id="vDropZoneProductImages" :url="image_postback_url" v-on:vdropzone-success="showSuccess" :show-remove-link="show_remove_link">
+                                        <input type="hidden" name="_token" :value="csrfToken"/>
+                                    </v-dropzone>
+                                </v-flex>
+                            </v-layout>
                         </v-container>
                     </v-tabs-content>
                     <v-tabs-content id="form-tabs-metadata">
@@ -146,6 +158,7 @@
                         </v-container>
                     </v-tabs-content>
                 </v-tabs>
+
             </v-flex>
             <v-fab class="green" @click.native="save">
                 <v-icon light>save</v-icon>
@@ -156,6 +169,8 @@
 <script>
     import Form from '../../classes/Form';
     import Category from '../../classes/Category';
+    import DropZone from 'vue2-dropzone';
+    import ProductImage from './ProductImage.vue';
     export default {
         props: ['id'],
         mounted() {
@@ -164,6 +179,7 @@
             {
                 this.form.id = this.id;
                 this.getProductData();
+                this.image_postback_url = '/webapi/products/' + this.id + '/images';
             }
         },
         data: function ()
@@ -186,7 +202,15 @@
                 }),
                 categories: [],
                 active: null,
+                show_remove_link: false,
+                csrfToken: window.Laravel.csrfToken,
+                image_postback_url: '',
+                images: []
             }
+        },
+        components: {
+            'v-dropzone': DropZone,
+            'v-product-image': ProductImage,
         },
         methods:
         {
@@ -202,6 +226,7 @@
                     this.form.metadata.title = response.data.metadata.title;
                     this.form.metadata.keywords = response.data.metadata.keywords;
                     this.form.metadata.description = response.data.metadata.description;
+                    this.images = response.data.images;
                 }.bind(this));
             },
             getCategories()
@@ -226,6 +251,20 @@
                         .then(response => this.$router.push('/products'))
                         .catch(error => console.log(error));
                 }
+            },
+            showSuccess: function (file) {
+                console.log('A file was successfully uploaded');
+                this.getImages();
+
+            },
+            getImages() {
+                axios.get(this.image_postback_url).then(function(response){
+                    this.images = response.data;
+                }.bind(this));
+            },
+            selectImage(event, payload) {
+                console.log(event);
+                this.form.image_path = event;
             }
         }
     }

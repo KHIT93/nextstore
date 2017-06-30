@@ -465,12 +465,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "e1e8116bc99f2337bed9a4cb4995a28c044ead9a"
+                "reference": "a3ee69e50889cdf789e11975233e120ec56e7f7a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/e1e8116bc99f2337bed9a4cb4995a28c044ead9a",
-                "reference": "e1e8116bc99f2337bed9a4cb4995a28c044ead9a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/a3ee69e50889cdf789e11975233e120ec56e7f7a",
+                "reference": "a3ee69e50889cdf789e11975233e120ec56e7f7a",
                 "shasum": ""
             },
             "require": {
@@ -588,7 +588,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2017-06-29T16:48:52+00:00"
+            "time": "2017-06-30T13:46:21+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -3064,16 +3064,16 @@
         },
         {
             "name": "phpunit/phpunit-mock-objects",
-            "version": "4.0.1",
+            "version": "4.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit-mock-objects.git",
-                "reference": "eabce450df194817a7d7e27e19013569a903a2bf"
+                "reference": "d8833b396dce9162bb2eb5d59aee5a3ab3cfa5b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/eabce450df194817a7d7e27e19013569a903a2bf",
-                "reference": "eabce450df194817a7d7e27e19013569a903a2bf",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit-mock-objects/zipball/d8833b396dce9162bb2eb5d59aee5a3ab3cfa5b4",
+                "reference": "d8833b396dce9162bb2eb5d59aee5a3ab3cfa5b4",
                 "shasum": ""
             },
             "require": {
@@ -3119,7 +3119,7 @@
                 "mock",
                 "xunit"
             ],
-            "time": "2017-03-03T06:30:20+00:00"
+            "time": "2017-06-30T08:15:21+00:00"
         },
         {
             "name": "sebastian/code-unit-reverse-lookup",
