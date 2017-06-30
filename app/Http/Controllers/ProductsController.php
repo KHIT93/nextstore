@@ -27,7 +27,11 @@ class ProductsController extends Controller
     public function store(CreateProductRequest $request)
     {
         $product = Product::create($request->all());
-        $product->metadata()->create($request['metadata']);
+        if($request['metadata'])
+        {
+            $product->metadata()->create($request['metadata']);
+        }
+
         return $product;
     }
 
@@ -52,14 +56,18 @@ class ProductsController extends Controller
     public function update(Request $request, Product $product)
     {
         $product->update($request->all());
-        if($product->metadata)
+        if($request['metadata'])
         {
-            $product->metadata()->save($request['metadata']);
+            if($product->metadata)
+            {
+                $product->metadata()->save($request['metadata']);
+            }
+            else
+            {
+                $product->metadata()->create($request['metadata']);
+            }
         }
-        else
-        {
-            $product->metadata()->create($request['metadata']);
-        }
+
         return $product->fresh();
     }
 
@@ -74,7 +82,7 @@ class ProductsController extends Controller
         //If a product is assigned to orders, only softdelete it.
         $product->delete();
         //Otherwise permanently delete it.
-        $product->forceDelete();
+        //$product->forceDelete();
 
         return response(['OK'], 200);
     }

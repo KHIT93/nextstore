@@ -19,4 +19,9 @@ class Product extends Model
     ];
 
     protected $with = ['metadata'];
+
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category');
+    }
 }
