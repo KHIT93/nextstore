@@ -192,7 +192,7 @@
                     description: '',
                     body: '',
                     price: 0,
-                    image_path: '',
+                    image_id: '',
                     id: null,
                     metadata: {
                         title: null,

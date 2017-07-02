@@ -16,7 +16,7 @@ class Product extends Model
         'description',
         'body',
         'price',
-        'image_path'
+        'image_id'
     ];
 
     protected $with = ['metadata', 'images'];
@@ -24,5 +24,10 @@ class Product extends Model
     public function category()
     {
         return $this->belongsTo('App\Models\Category');
+    }
+
+    public function image()
+    {
+        return $this->morphOne('App\Models\Image', 'entity');
     }
 }
