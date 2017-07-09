@@ -15,10 +15,9 @@
                     <tr v-for="product in products">
                         <td>{{ product.id }}</td>
                         <td>{{ product.name }}</td>
-                        <td>{{ product.category_id }}</td>
-                        <td>{{ product.price }}</td>
                         <td v-if="product.category_id != null">{{ product.category.name }}</td>
                         <td v-if="product.category_id == null"></td>
+                        <td>{{ product.price }}</td>
                         <td>
                             <v-btn icon :to="{ name: 'products.edit', params: { id: product.id }}" router>
                                 <v-icon>edit</v-icon>
