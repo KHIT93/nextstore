@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Models\Configuration;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class ConfigurationController extends Controller
 {
