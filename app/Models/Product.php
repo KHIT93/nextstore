@@ -19,7 +19,7 @@ class Product extends Model
         'image_id'
     ];
 
-    protected $with = ['metadata', 'images'];
+    protected $with = ['metadata', 'image'];
 
     public function category()
     {

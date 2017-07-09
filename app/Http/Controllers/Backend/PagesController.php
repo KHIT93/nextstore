@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\Models\Page;
 use Illuminate\Http\Request;
@@ -30,7 +30,7 @@ class PagesController extends Controller
         {
             $page->metadata()->create($request['metadata']);
         }
-        
+
         return $page;
     }
 
