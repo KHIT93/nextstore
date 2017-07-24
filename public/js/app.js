@@ -29929,7 +29929,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "white-space": "nowrap"
     }
-  }, [_vm._v(_vm._s(_vm.cart.total_in_currency))])])]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.cart.subtotal_in_currency))])])]), _vm._v(" "), _c('div', {
     staticClass: "row",
     attrs: {
       "id": "order_total_taxes"
@@ -29961,7 +29961,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticStyle: {
       "white-space": "nowrap"
     }
-  }, [_vm._v(_vm._s(_vm.cart.total_incl_taxes_in_currency))])])])])])])])])
+  }, [_vm._v(_vm._s(_vm.cart.total_in_currency))])])])])])])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"

@@ -29,7 +29,7 @@
                         <div class="row" id="order_total_untaxed">
                             <span class="col-6 text-right text-muted">Subtotal:</span>
                             <span class="col-6 text-right text-muted">
-                                <span style="white-space: nowrap;">{{ cart.total_in_currency }}</span>
+                                <span style="white-space: nowrap;">{{ cart.subtotal_in_currency }}</span>
                             </span>
                         </div>
                         <div class="row" id="order_total_taxes">
@@ -42,7 +42,7 @@
                         <div class="row" id="order_total">
                             <span class="col-6 text-right h4">Total:</span>
                             <span class="col-6 text-right h4" style="white-space: nowrap;">
-                                <span style="white-space: nowrap;">{{ cart.total_incl_taxes_in_currency }}</span>
+                                <span style="white-space: nowrap;">{{ cart.total_in_currency }}</span>
                             </span>
                         </div>
                     </div>

@@ -84,6 +84,7 @@ class Cart extends Model
     {
         $data = parent::toArray();
         $data['taxes'] = $this->taxes;
+        $data['total'] = $this->total;
         $data['shipping'] = 0;
         $data['subtotal_in_currency'] = money_format('%i', $this->subtotal / 100);
         $data['total_in_currency'] = money_format('%i', $this->total / 100);
