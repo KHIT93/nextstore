@@ -3,6 +3,7 @@
 namespace Tests\Unit;
 
 use Tests\TestCase;
+use App\Models\Tax;
 use App\Models\Cart;
 use App\Models\CartItem;
 use App\Models\Product;
@@ -21,9 +22,9 @@ class CartTest extends TestCase
         $product = create(Product::class, ['price' => 100]);
         $cart->addItem($product->id, 1);
         //Check the the current in-memory object has the correct total
-        $this->assertEquals(100, $cart->total);
+        $this->assertEquals(100, $cart->subtotal);
         //Check that the cart in the database has the correct total
-        $this->assertEquals(100, $cart->fresh()->total);
+        $this->assertEquals(100, $cart->fresh()->subtotal);
     }
 
     /** @test */
@@ -42,11 +43,11 @@ class CartTest extends TestCase
         $product = create(Product::class, ['price' => 100]);
         $cart->addItem($product->id, 1);
         $cart = $cart->fresh();
-        $this->assertEquals(100, $cart->total);
+        $this->assertEquals(100, $cart->subtotal);
         $cart->addItem($product->id, 1);
         $items = CartItem::where('product_id', '=', $product->id)->where('cart_id', '=', $cart->id)->get();
         $this->assertCount(1, $items);
-        $this->assertEquals(200, $cart->fresh()->total);
+        $this->assertEquals(200, $cart->fresh()->subtotal);
     }
 
     /** @test */
@@ -56,9 +57,9 @@ class CartTest extends TestCase
         $product = create(Product::class, ['price' => 100]);
         $cart->addItem($product->id, 1);
         $cart = $cart->fresh();
-        $this->assertEquals(100, $cart->fresh()->total);
+        $this->assertEquals(100, $cart->fresh()->subtotal);
         $cart->updateItem($product->id, 6);
-        $this->assertEquals(600, $cart->fresh()->total);
+        $this->assertEquals(600, $cart->fresh()->subtotal);
     }
 
     /** @test */
@@ -67,8 +68,32 @@ class CartTest extends TestCase
         $cart = Cart::create();
         $product = create(Product::class, ['price' => 100]);
         $cart->addItem($product->id, 6);
-        $this->assertEquals(600, $cart->fresh()->total);
+        $this->assertEquals(600, $cart->fresh()->subtotal);
         $cart->fresh()->deleteItem($product->id);
-        $this->assertEquals(0, $cart->fresh()->total);
+        $this->assertEquals(0, $cart->fresh()->subtotal);
+    }
+
+    /** @test */
+    public function a_shopping_cart_subtotal_does_not_include_taxes()
+    {
+        $product = create(Product::class, ['id' => 123, 'price' => 100]);
+        Tax::create(['name' => 'Sales tax', 'value' => 25])->products()->save($product);
+        $cart = Cart::create();
+        $cart->addItem($product->id, 1);
+        $cart = $cart->fresh();
+        $this->assertEquals(100, $cart->subtotal);
+    }
+
+    /** @test */
+    public function a_shopping_cart_total_does_include_taxes_and_shipping()
+    {
+        $product = create(Product::class, ['id' => 123, 'price' => 100]);
+        Tax::create(['name' => 'Sales tax', 'value' => 25])->products()->save($product);
+        $cart = Cart::create();
+        $cart->addItem($product->id, 1);
+        $cart = $cart->fresh();
+        $this->assertEquals(25, $cart->taxes);
+        $this->assertEquals(0, $cart->shipping);
+        $this->assertEquals(125, $cart->total);
     }
 }

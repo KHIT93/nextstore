@@ -22,17 +22,17 @@ class Cart extends Model
         if($this->cart_items->contains('product_id', $product_id))
         {
             $cart_item = $this->cart_items->where('product_id', '=', $product_id)->first();
-            $current_total = $cart_item->total;
+            $current_total = $cart_item->subtotal;
             $cart_item->qty += $qty;
             $cart_item->save();
-            $this->total += $cart_item->total - $current_total;
+            $this->subtotal += $cart_item->subtotal - $current_total;
             $this->save();
 
         }
         else
         {
             $cart_item =$this->cart_items()->save(new CartItem(['product_id' =>  $product_id, 'qty' => $qty]));
-            $this->total += $cart_item->total;
+            $this->subtotal += $cart_item->subtotal;
             $this->save();
 
         }
@@ -43,10 +43,10 @@ class Cart extends Model
         if($this->cart_items->contains('product_id', $product_id))
         {
             $cart_item = $this->cart_items->where('product_id', '=', $product_id)->first();
-            $current_total = $cart_item->total;
+            $current_total = $cart_item->subtotal;
             $cart_item->qty = $qty;
             $cart_item->save();
-            $this->total += $cart_item->total - $current_total;
+            $this->subtotal += $cart_item->subtotal - $current_total;
             $this->save();
         }
     }
@@ -56,34 +56,39 @@ class Cart extends Model
         if($this->cart_items->contains('product_id', $product_id))
         {
             $item = $this->cart_items->where('product_id', '=', $product_id)->first();
-            $total = $item->total;
+            $total = $item->subtotal;
             $item->delete();
-            $this->total -= $total;
+            $this->subtotal -= $total;
             $this->save();
         }
     }
 
-    public function calculateTotal()
+
+
+    public function getTotalAttribute($value)
     {
-        $total = 0;
-        foreach ($this->cart_items as $item)
-        {
-            $total += $item->total;
-        }
-        $this->total = $total;
-        $this->save();
-        return $this;
+        return $this->subtotal + $this->cart_items->sum('taxes') + $this->shipping;
+    }
+
+    public function getShippingAttribute($value)
+    {
+        return 0;
+    }
+
+    public function getTaxesAttribute($value)
+    {
+        return $this->cart_items->sum('taxes');
     }
 
     public function toArray()
     {
         $data = parent::toArray();
-        $data['taxes'] = $this->total * 0.25;
+        $data['taxes'] = $this->taxes;
         $data['shipping'] = 0;
+        $data['subtotal_in_currency'] = money_format('%i', $this->subtotal / 100);
         $data['total_in_currency'] = money_format('%i', $this->total / 100);
         $data['taxes_in_currency'] = money_format('%i', $data['taxes'] / 100);
         $data['shipping_in_currency'] = money_format('%i', $data['shipping'] / 100);
-        $data['total_incl_taxes_in_currency'] = money_format('%i', ($data['total'] + $data['taxes'] + $data['shipping']) / 100);
         return $data;
     }
 }

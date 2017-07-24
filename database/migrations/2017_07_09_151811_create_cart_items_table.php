@@ -18,7 +18,7 @@ class CreateCartItemsTable extends Migration
             $table->integer('cart_id')->unsigned();
             $table->integer('product_id')->unsigned();
             $table->integer('qty')->unsigned();
-            $table->decimal('total')->default(0);
+            $table->decimal('subtotal')->default(0);
             $table->timestamps();
         });
     }

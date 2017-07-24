@@ -17,6 +17,8 @@ import CategoriesIndex from './components/Backend/CategoriesIndex.vue';
 import CategoriesForm from './components/Backend/CategoriesForm.vue';
 import PagesIndex from './components/Backend/PagesIndex.vue';
 import PagesForm from './components/Backend/PagesForm.vue';
+import TaxConfigurationIndex from './components/Backend/TaxConfigurationIndex.vue';
+import TaxForm from './components/Backend/TaxForm.vue';
 import LoginForm from './components/Backend/LoginForm.vue';
 import NotFound from './components/Backend/NotFound.vue';
 
@@ -36,6 +38,9 @@ const routes = [
     { path: '/pages', component: PagesIndex, name: 'pages.index' },
     { path: '/pages/create', component: PagesForm, name: 'pages.create' },
     { path: '/pages/:id', component: PagesForm, props: true, name: 'pages.edit' },
+    { path: '/configuration/taxes', component: TaxConfigurationIndex, name: 'taxes.index' },
+    { path: '/configuration/taxes/create', component: TaxForm, name: 'taxes.create' },
+    { path: '/configuration/taxes/:id', component: TaxForm, props: true, name: 'taxes.edit' },
 
     /** Catchall route to display 404 page */
     { path: '*', component: NotFound }

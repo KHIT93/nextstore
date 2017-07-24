@@ -31582,10 +31582,14 @@ if (inBrowser && window.Vue) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue__ = __webpack_require__(78);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue__ = __webpack_require__(84);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_TaxConfigurationIndex_vue__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__components_Backend_TaxConfigurationIndex_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_11__components_Backend_TaxConfigurationIndex_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Backend_TaxForm_vue__ = __webpack_require__(84);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__components_Backend_TaxForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_12__components_Backend_TaxForm_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Backend_LoginForm_vue__ = __webpack_require__(87);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__components_Backend_LoginForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_13__components_Backend_LoginForm_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Backend_NotFound_vue__ = __webpack_require__(90);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__components_Backend_NotFound_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_14__components_Backend_NotFound_vue__);
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -31608,13 +31612,15 @@ if (inBrowser && window.Vue) {
 
 
 
+
+
 Vue.use(__WEBPACK_IMPORTED_MODULE_1_vuetify___default.a);
 Vue.use(vue_router_esm_defaultExport);
 
-var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Backend_Home_vue___default.a, name: 'home' }, { path: '/orders', component: __WEBPACK_IMPORTED_MODULE_4__components_Backend_Orders_vue___default.a, name: 'orders.index' }, { path: '/products', component: __WEBPACK_IMPORTED_MODULE_5__components_Backend_ProductsIndex_vue___default.a, name: 'products.index' }, { path: '/products/create', component: __WEBPACK_IMPORTED_MODULE_6__components_Backend_ProductsForm_vue___default.a, name: 'products.create' }, { path: '/products/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_Backend_ProductsForm_vue___default.a, props: true, name: 'products.edit' }, { path: '/categories', component: __WEBPACK_IMPORTED_MODULE_7__components_Backend_CategoriesIndex_vue___default.a, name: 'categories.index' }, { path: '/categories/create', component: __WEBPACK_IMPORTED_MODULE_8__components_Backend_CategoriesForm_vue___default.a, name: 'categories.create' }, { path: '/categories/:id', component: __WEBPACK_IMPORTED_MODULE_8__components_Backend_CategoriesForm_vue___default.a, props: true, name: 'categories.edit' }, { path: '/pages', component: __WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue___default.a, name: 'pages.index' }, { path: '/pages/create', component: __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default.a, name: 'pages.create' }, { path: '/pages/:id', component: __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default.a, props: true, name: 'pages.edit' },
+var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_3__components_Backend_Home_vue___default.a, name: 'home' }, { path: '/orders', component: __WEBPACK_IMPORTED_MODULE_4__components_Backend_Orders_vue___default.a, name: 'orders.index' }, { path: '/products', component: __WEBPACK_IMPORTED_MODULE_5__components_Backend_ProductsIndex_vue___default.a, name: 'products.index' }, { path: '/products/create', component: __WEBPACK_IMPORTED_MODULE_6__components_Backend_ProductsForm_vue___default.a, name: 'products.create' }, { path: '/products/:id', component: __WEBPACK_IMPORTED_MODULE_6__components_Backend_ProductsForm_vue___default.a, props: true, name: 'products.edit' }, { path: '/categories', component: __WEBPACK_IMPORTED_MODULE_7__components_Backend_CategoriesIndex_vue___default.a, name: 'categories.index' }, { path: '/categories/create', component: __WEBPACK_IMPORTED_MODULE_8__components_Backend_CategoriesForm_vue___default.a, name: 'categories.create' }, { path: '/categories/:id', component: __WEBPACK_IMPORTED_MODULE_8__components_Backend_CategoriesForm_vue___default.a, props: true, name: 'categories.edit' }, { path: '/pages', component: __WEBPACK_IMPORTED_MODULE_9__components_Backend_PagesIndex_vue___default.a, name: 'pages.index' }, { path: '/pages/create', component: __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default.a, name: 'pages.create' }, { path: '/pages/:id', component: __WEBPACK_IMPORTED_MODULE_10__components_Backend_PagesForm_vue___default.a, props: true, name: 'pages.edit' }, { path: '/configuration/taxes', component: __WEBPACK_IMPORTED_MODULE_11__components_Backend_TaxConfigurationIndex_vue___default.a, name: 'taxes.index' }, { path: '/configuration/taxes/create', component: __WEBPACK_IMPORTED_MODULE_12__components_Backend_TaxForm_vue___default.a, name: 'taxes.create' }, { path: '/configuration/taxes/:id', component: __WEBPACK_IMPORTED_MODULE_12__components_Backend_TaxForm_vue___default.a, props: true, name: 'taxes.edit' },
 
 /** Catchall route to display 404 page */
-{ path: '*', component: __WEBPACK_IMPORTED_MODULE_12__components_Backend_NotFound_vue___default.a }];
+{ path: '*', component: __WEBPACK_IMPORTED_MODULE_14__components_Backend_NotFound_vue___default.a }];
 
 var router = new vue_router_esm_defaultExport({
     routes: routes
@@ -31635,7 +31641,7 @@ var app = new Vue({
         mini: false
     },
     components: {
-        'v-login-form': __WEBPACK_IMPORTED_MODULE_11__components_Backend_LoginForm_vue___default.a
+        'v-login-form': __WEBPACK_IMPORTED_MODULE_13__components_Backend_LoginForm_vue___default.a
     },
     methods: {
         logout: function logout() {
@@ -43140,6 +43146,457 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
+Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/TaxConfigurationIndex.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] TaxConfigurationIndex.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-28bfa1b4", Component.options)
+  } else {
+    hotAPI.reload("data-v-28bfa1b4", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 82 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    mounted: function mounted() {
+        this.getTaxes();
+    },
+
+    data: function data() {
+        return {
+            taxes: [],
+            error: null,
+            dialog: false,
+            chosen_tax: { name: '' }
+        };
+    },
+    methods: {
+        getTaxes: function getTaxes() {
+            axios.get('/webapi/taxes').then(function (response) {
+                this.taxes = response.data;
+            }.bind(this)).catch(function (error) {
+                console.log(error);
+                this.error = error;
+            });
+        },
+        openDialog: function openDialog(tax) {
+            this.chosen_tax = tax;
+            this.dialog = true;
+        },
+        cancelDialog: function cancelDialog() {
+            this.dialog = false;
+            this.chosen_tax = { name: '' };
+        },
+        deleteTax: function deleteTax() {
+            axios.delete('/webapi/taxes/' + this.chosen_tax.id).then(function (response) {
+                console.log(response);
+                this.chosen_tax = { name: '' };
+                this.dialog = false;
+                this.getTaxes();
+            }.bind(this));
+        }
+    }
+});
+
+/***/ }),
+/* 83 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-layout', [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('table', {
+    staticClass: "table datatable elevation-1"
+  }, [_c('thead', [_c('tr', [_c('th', {
+    staticClass: "text-xs-left"
+  }, [_vm._v("Tax ID")]), _vm._v(" "), _c('th', {
+    staticClass: "text-xs-left"
+  }, [_vm._v("Name")]), _vm._v(" "), _c('th', {
+    staticClass: "text-xs-left"
+  }, [_vm._v("Amount")]), _vm._v(" "), _c('th')])]), _vm._v(" "), _c('tbody', _vm._l((_vm.taxes), function(tax) {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(tax.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(tax.name))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(tax.value))]), _vm._v(" "), _c('td', [_c('v-btn', {
+      attrs: {
+        "icon": "",
+        "to": {
+          name: 'taxes.edit',
+          params: {
+            id: tax.id
+          }
+        },
+        "router": ""
+      }
+    }, [_c('v-icon', [_vm._v("edit")])], 1), _vm._v(" "), _c('v-btn', {
+      staticClass: "error--text",
+      attrs: {
+        "icon": ""
+      },
+      nativeOn: {
+        "click": function($event) {
+          _vm.openDialog(tax)
+        }
+      }
+    }, [_c('v-icon', [_vm._v("delete")])], 1)], 1)])
+  }))])]), _vm._v(" "), _c('v-fab', {
+    staticClass: "indigo",
+    attrs: {
+      "to": "/configuration/taxes/create",
+      "router": ""
+    }
+  }, [_c('v-icon', {
+    attrs: {
+      "light": ""
+    }
+  }, [_vm._v("add")])], 1), _vm._v(" "), _c('v-dialog', {
+    attrs: {
+      "persistent": ""
+    },
+    model: {
+      value: (_vm.dialog),
+      callback: function($$v) {
+        _vm.dialog = $$v
+      },
+      expression: "dialog"
+    }
+  }, [_c('v-card', [_c('v-card-row', [_c('v-card-title', [_vm._v("Delete tax")])], 1), _vm._v(" "), _c('v-card-row', [_c('v-card-text', [_vm._v("Are you sure that you want to delete " + _vm._s(this.chosen_tax.name))])], 1), _vm._v(" "), _c('v-card-row', {
+    attrs: {
+      "actions": ""
+    }
+  }, [_c('v-btn', {
+    staticClass: "green--text darken-1",
+    attrs: {
+      "flat": "flat"
+    },
+    nativeOn: {
+      "click": function($event) {
+        _vm.cancelDialog($event)
+      }
+    }
+  }, [_vm._v("No")]), _vm._v(" "), _c('v-btn', {
+    staticClass: "red--text darken-1",
+    attrs: {
+      "flat": "flat"
+    },
+    nativeOn: {
+      "click": function($event) {
+        _vm.deleteTax($event)
+      }
+    }
+  }, [_vm._v("Yes")])], 1)], 1)], 1)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-28bfa1b4", module.exports)
+  }
+}
+
+/***/ }),
+/* 84 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(85),
+  /* template */
+  __webpack_require__(86),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
+Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/TaxForm.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] TaxForm.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-723a51ee", Component.options)
+  } else {
+    hotAPI.reload("data-v-723a51ee", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 85 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_Form__ = __webpack_require__(2);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    props: ['id'],
+    mounted: function mounted() {
+        this.getTaxes();
+        if (this.id) {
+            this.form.id = this.id;
+            this.getTaxData();
+        }
+    },
+
+    data: function data() {
+        return {
+            form: new __WEBPACK_IMPORTED_MODULE_0__classes_Form__["a" /* default */]({
+                name: '',
+                value: null
+            }),
+            taxes: []
+        };
+    },
+    methods: {
+        getTaxData: function getTaxData() {
+            axios.get('/webapi/taxes/' + this.form.id).then(function (response) {
+                this.form.name = response.data.name;
+                this.form.value = response.data.value;
+            }.bind(this));
+        },
+        getTaxes: function getTaxes() {
+            axios.get('/webapi/taxes').then(function (response) {
+                this.taxes = response.data;
+            }.bind(this));
+        },
+        save: function save() {
+            var _this = this;
+
+            if (this.form.id) {
+                this.form.patch('/webapi/taxes/' + this.form.id).then(function (response) {
+                    return _this.$router.push('/configuration/taxes');
+                }).catch(function (error) {
+                    return console.log(error);
+                });
+            } else {
+                this.form.put('/webapi/taxes').then(function (response) {
+                    return _this.$router.push('/configuration/taxes');
+                }).catch(function (error) {
+                    return console.log(error);
+                });
+            }
+        }
+    }
+});
+
+/***/ }),
+/* 86 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('v-layout', [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('v-container', {
+    attrs: {
+      "fluid": ""
+    }
+  }, [_c('v-layout', [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "name": "name",
+      "label": "Name",
+      "required": "",
+      "error": _vm.form.errors.has('name'),
+      "errors": _vm.form.errors.get('name'),
+      "hint": "Give a name to your tax",
+      "persistent-hint": ""
+    },
+    model: {
+      value: (_vm.form.name),
+      callback: function($$v) {
+        _vm.form.name = $$v
+      },
+      expression: "form.name"
+    }
+  })], 1)], 1), _vm._v(" "), _c('v-layout', [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('v-text-field', {
+    attrs: {
+      "name": "value",
+      "label": "Amount",
+      "required": "",
+      "error": _vm.form.errors.has('value'),
+      "errors": _vm.form.errors.get('value'),
+      "hint": "Give your tax a percentage value",
+      "persistent-hint": "",
+      "type": "number",
+      "min": "0"
+    },
+    model: {
+      value: (_vm.form.value),
+      callback: function($$v) {
+        _vm.form.value = $$v
+      },
+      expression: "form.value"
+    }
+  })], 1)], 1)], 1)], 1), _vm._v(" "), _c('v-fab', {
+    staticClass: "green",
+    nativeOn: {
+      "click": function($event) {
+        _vm.save($event)
+      }
+    }
+  }, [_c('v-icon', {
+    attrs: {
+      "light": ""
+    }
+  }, [_vm._v("save")])], 1)], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-723a51ee", module.exports)
+  }
+}
+
+/***/ }),
+/* 87 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var Component = __webpack_require__(1)(
+  /* script */
+  __webpack_require__(88),
+  /* template */
+  __webpack_require__(89),
+  /* styles */
+  null,
+  /* scopeId */
+  null,
+  /* moduleIdentifier (server only) */
+  null
+)
 Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/LoginForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] LoginForm.vue: functional components are not supported with templates, they should use render functions.")}
@@ -43164,7 +43621,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 82 */
+/* 88 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43250,7 +43707,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 83 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -43361,15 +43818,15 @@ if (false) {
 }
 
 /***/ }),
-/* 84 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 var Component = __webpack_require__(1)(
   /* script */
-  __webpack_require__(85),
+  __webpack_require__(91),
   /* template */
-  __webpack_require__(86),
+  __webpack_require__(92),
   /* styles */
   null,
   /* scopeId */
@@ -43401,7 +43858,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 85 */
+/* 91 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -43434,7 +43891,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 86 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

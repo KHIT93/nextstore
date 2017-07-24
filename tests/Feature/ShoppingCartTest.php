@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\Product;
 use App\Models\User;
+use App\Models\Tax;
 use App\Exceptions\InvalidCartItemException;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -22,7 +23,7 @@ class ShoppingCartTest extends TestCase
         $response = $this->getJson(route('cart.show'));
         $response->assertStatus(200);
         $response->assertSessionHas('cart_id');
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
     }
 
     /** @test */
@@ -43,12 +44,12 @@ class ShoppingCartTest extends TestCase
         $response = $this->getJson(route('cart.show'));
 
         //Check that the cart total is correct before we log in.
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
 
         $this->signIn($user);
         $response = $this->getJson(route('cart.show'));
         //Check that the cart total is correct after logging in.
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
     }
 
     /** @test */
@@ -57,10 +58,10 @@ class ShoppingCartTest extends TestCase
         $product = create(Product::class, ['id' => 123, 'price' => 500]);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 1]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
         $this->post(route('register'), ['name' => 'John Doe', 'email' => 'john@example.com', 'password' => 'P@ssw0rd', 'password_confirmation' => 'P@ssw0rd']);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
     }
 
     /** @test */
@@ -76,11 +77,11 @@ class ShoppingCartTest extends TestCase
         $product = create(Product::class, ['id' => 123, 'price' => 500]);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 1]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 1]);
         $response = $this->getJson(route('cart.show'));
         $this->assertCount(1, $response->json()['cart_items']);
-        $this->assertEquals(1000, $response->json()['total']);
+        $this->assertEquals(1000, $response->json()['subtotal']);
     }
 
     /** @test */
@@ -89,10 +90,10 @@ class ShoppingCartTest extends TestCase
         $product = create(Product::class, ['id' => 123, 'price' => 500]);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 2]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(1000, $response->json()['total']);
+        $this->assertEquals(1000, $response->json()['subtotal']);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => -1]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(500, $response->json()['total']);
+        $this->assertEquals(500, $response->json()['subtotal']);
     }
 
     /** @test */
@@ -101,10 +102,10 @@ class ShoppingCartTest extends TestCase
         $product = create(Product::class, ['id' => 123, 'price' => 500]);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 2]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(1000, $response->json()['total']);
+        $this->assertEquals(1000, $response->json()['subtotal']);
         $this->json('PATCH', route('cart.item.update'), ['product_id' => $product->id, 'qty' => 6]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(3000, $response->json()['total']);
+        $this->assertEquals(3000, $response->json()['subtotal']);
     }
 
     /** @test */
@@ -113,9 +114,18 @@ class ShoppingCartTest extends TestCase
         $product = create(Product::class, ['id' => 123, 'price' => 500]);
         $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 2]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(1000, $response->json()['total']);
+        $this->assertEquals(1000, $response->json()['subtotal']);
         $this->json('DELETE', route('cart.item.delete'), ['product_id' => $product->id]);
         $response = $this->getJson(route('cart.show'));
-        $this->assertEquals(0, $response->json()['total']);
+        $this->assertEquals(0, $response->json()['subtotal']);
+    }
+
+    /** @test */
+    public function a_cart_has_taxes()
+    {
+        $product = create(Product::class, ['id' => 123, 'price' => 100]);
+        Tax::create(['name' => 'Sales tax', 'value' => 25])->products()->save($product);
+        $this->json('POST', route('cart.store'), ['product_id' => $product->id, 'qty' => 1]);
+        $this->assertEquals(25, $this->getJson(route('cart.show'))->json()['taxes']);
     }
 }

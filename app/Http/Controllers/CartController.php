@@ -93,7 +93,7 @@ class CartController extends Controller
         $cart = null;
         if(!session()->has('cart_id'))
         {
-            $cart = Cart::create()->calculateTotal();
+            $cart = Cart::create();
             session(['cart_id' => $cart->id]);
         }
         return (is_null($cart) ? Cart::where('id', '=', session('cart_id'))->first() :  $cart);

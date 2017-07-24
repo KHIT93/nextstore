@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Models\Support\HasMetadata;
 use App\Models\Support\HasImages;
 use App\Models\CartItem;
+use App\Models\Tax;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -35,5 +36,19 @@ class Product extends Model
     public function cart_items()
     {
         return $this->hasMany(CartItem::class);
+    }
+
+    public function tax()
+    {
+        return $this->belongsTo(Tax::class);
+    }
+
+    public function tax_value()
+    {
+        if(!$this->tax)
+        {
+            return 0;
+        }
+        return $this->price * ($this->tax->value / 100);
     }
 }

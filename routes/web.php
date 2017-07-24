@@ -47,6 +47,12 @@ Route::prefix('webapi')->group(function(){
         Route::patch('/pages/{page}', 'Backend\PagesController@update')->name('webapi.pages.update');
         Route::delete('/pages/{page}', 'Backend\PagesController@destroy')->name('webapi.pages.destroy');
 
+        Route::get('/taxes', 'Backend\TaxesController@index')->name('webapi.taxes.index');
+        Route::put('/taxes', 'Backend\TaxesController@store')->name('webapi.taxes.create');
+        Route::get('/taxes/{tax}', 'Backend\TaxesController@show')->name('webapi.taxes.show');
+        Route::patch('/taxes/{tax}', 'Backend\TaxesController@update')->name('webapi.taxes.update');
+        Route::delete('/taxes/{tax}', 'Backend\TaxesController@destroy')->name('webapi.taxes.destroy');
+
         Route::delete('/images/{image}', 'ImagesController@destroy');
     });
 });

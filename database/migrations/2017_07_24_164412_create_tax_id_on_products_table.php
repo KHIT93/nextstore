@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCartsTable extends Migration
+class CreateTaxIdOnProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateCartsTable extends Migration
      */
     public function up()
     {
-        Schema::create('carts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned()->nullable();
-            $table->decimal('subtotal')->default(0);
-            $table->timestamps();
+        Schema::table('products', function (Blueprint $table) {
+            $table->integer('tax_id')->unsigned()->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateCartsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('carts');
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn('tax_id');
+        });
     }
 }

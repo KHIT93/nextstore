@@ -15,7 +15,7 @@ class CartItem extends Model
 
     public function calculateTotal()
     {
-        $this->total = $this->product->price * $this->qty;
+        $this->subtotal = $this->product->price * $this->qty;
     }
 
     public function cart()
@@ -39,9 +39,21 @@ class CartItem extends Model
         return parent::save($options);
     }
 
+    public function getTaxesAttribute($value)
+    {
+        return $this->product->tax_value() * $this->qty;
+    }
+
+    public function getTotalAttribute($value)
+    {
+        return $this->subtotal + $this->taxes;
+    }
+
     public function toArray()
     {
         $data = parent::toArray();
+        $data['taxes'] = $this->taxes;
+        $data['subtotal_in_currency'] = money_format('%i', $this->subtotal / 100);
         $data['total_in_currency'] = money_format('%i', $this->total / 100);
         return $data;
     }
