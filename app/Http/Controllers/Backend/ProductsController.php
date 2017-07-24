@@ -61,7 +61,7 @@ class ProductsController extends Controller
         {
             if($product->metadata)
             {
-                $product->metadata()->save($request['metadata']);
+                $product->metadata()->update($request['metadata']);
             }
             else
             {

@@ -26,7 +26,7 @@ export default class Form {
             data[property] = this[property];
         }
 
-        return data;
+        return {data};
     }
 
 

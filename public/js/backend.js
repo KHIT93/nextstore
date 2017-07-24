@@ -599,7 +599,7 @@ var Form_Form = function () {
                 data[property] = this[property];
             }
 
-            return data;
+            return { data: data };
         }
 
         /**
@@ -41000,7 +41000,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_vm._v("Category")]), _vm._v(" "), _c('th', {
     staticClass: "text-xs-left"
   }, [_vm._v("Price")]), _vm._v(" "), _c('th')])]), _vm._v(" "), _c('tbody', _vm._l((_vm.products), function(product) {
-    return _c('tr', [_c('td', [_vm._v(_vm._s(product.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.name))]), _vm._v(" "), (product.category_id != null) ? _c('td', [_vm._v(_vm._s(product.category.name))]) : _vm._e(), _vm._v(" "), (product.category_id == null) ? _c('td') : _vm._e(), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.price))]), _vm._v(" "), _c('td', [_c('v-btn', {
+    return _c('tr', [_c('td', [_vm._v(_vm._s(product.id))]), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.name))]), _vm._v(" "), (product.category_id != null) ? _c('td', [_vm._v(_vm._s(product.category.name))]) : _vm._e(), _vm._v(" "), (product.category_id == null) ? _c('td') : _vm._e(), _vm._v(" "), _c('td', [_vm._v(_vm._s(product.price_formatted))]), _vm._v(" "), _c('td', [_c('v-btn', {
       attrs: {
         "icon": "",
         "to": {
@@ -41123,12 +41123,25 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+
+// CONCATENATED MODULE: ./resources/assets/js/classes/Tax.js
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Tax = function Tax(id, name) {
+    _classCallCheck(this, Tax);
+
+    this.value = id;
+    this.text = name;
+};
+
+/* harmony default export */ var Tax_defaultExport = (Tax);
+// CONCATENATED MODULE: ./node_modules/babel-loader/lib?{"cacheDirectory":true,"presets":[["env",{"modules":false,"targets":{"browsers":["> 2%"],"uglify":true}}]]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./resources/assets/js/components/Backend/ProductsForm.vue
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__classes_Form__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__classes_Category__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_vue2_dropzone__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ProductImage_vue__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ProductImage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3__ProductImage_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_dropzone__ = __webpack_require__(64);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_vue2_dropzone___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_vue2_dropzone__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ProductImage_vue__ = __webpack_require__(65);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ProductImage_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__ProductImage_vue__);
 //
 //
 //
@@ -41297,6 +41310,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -41306,6 +41334,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     props: ['id'],
     mounted: function mounted() {
         this.getCategories();
+        this.getTaxes();
         if (this.id) {
             this.form.id = this.id;
             this.getProductData();
@@ -41323,14 +41352,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 body: '',
                 price: 0,
                 image_id: '',
+                tax_id: null,
                 id: null,
                 metadata: {
-                    title: null,
-                    keywords: null,
-                    description: null
+                    title: '',
+                    keywords: '',
+                    description: ''
                 }
             }),
             categories: [],
+            taxes: [],
             active: null,
             show_remove_link: false,
             csrfToken: window.Laravel.csrfToken,
@@ -41339,8 +41370,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         };
     },
     components: {
-        'v-dropzone': __WEBPACK_IMPORTED_MODULE_2_vue2_dropzone___default.a,
-        'v-product-image': __WEBPACK_IMPORTED_MODULE_3__ProductImage_vue___default.a
+        'v-dropzone': __WEBPACK_IMPORTED_MODULE_3_vue2_dropzone___default.a,
+        'v-product-image': __WEBPACK_IMPORTED_MODULE_4__ProductImage_vue___default.a
     },
     methods: {
         getProductData: function getProductData() {
@@ -41361,6 +41392,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             axios.get('/webapi/categories?nochildren&noparent').then(function (response) {
                 response.data.forEach(function (item, index) {
                     this.categories.push(new __WEBPACK_IMPORTED_MODULE_1__classes_Category__["a" /* default */](item.id, item.name));
+                }.bind(this));
+            }.bind(this));
+        },
+        getTaxes: function getTaxes() {
+            axios.get('/webapi/taxes').then(function (response) {
+                response.data.forEach(function (item, index) {
+                    this.taxes.push(new Tax_defaultExport(item.id, item.name));
                 }.bind(this));
             }.bind(this));
         },
@@ -41629,6 +41667,27 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
         _vm.form.category_id = $$v
       },
       expression: "form.category_id"
+    }
+  })], 1)], 1), _vm._v(" "), _c('v-layout', [_c('v-flex', {
+    attrs: {
+      "xs12": ""
+    }
+  }, [_c('v-select', {
+    attrs: {
+      "items": _vm.taxes,
+      "label": "Select a tax",
+      "dark": "",
+      "single-line": "",
+      "auto": "",
+      "hint": "Select the tax that applies to your product",
+      "persistent-hint": ""
+    },
+    model: {
+      value: (_vm.form.tax_id),
+      callback: function($$v) {
+        _vm.form.tax_id = $$v
+      },
+      expression: "form.tax_id"
     }
   })], 1)], 1), _vm._v(" "), _c('v-layout', [_c('v-flex', {
     attrs: {

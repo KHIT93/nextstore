@@ -18,7 +18,9 @@ class Product extends Model
         'description',
         'body',
         'price',
-        'image_id'
+        'image_id',
+        'tax_id',
+        'category_id'
     ];
 
     protected $with = ['metadata', 'image'];
@@ -50,5 +52,17 @@ class Product extends Model
             return 0;
         }
         return $this->price * ($this->tax->value / 100);
+    }
+
+    public function getPriceFormattedAttribute($value)
+    {
+        return money_format('%i', $this->price / 100);
+    }
+
+    public function toArray()
+    {
+        $data = parent::toArray();
+        $data['price_formatted'] = $this->price_formatted;
+        return $data;
     }
 }

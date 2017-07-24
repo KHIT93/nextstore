@@ -44,7 +44,14 @@ class CategoriesController extends Controller
         $category = Category::create($request->all());
         if($request['metadata'])
         {
-            $category->metadata()->create($request['metadata']);
+            if($category->metadata)
+            {
+                $category->metadata()->update($request['metadata']);
+            }
+            else
+            {
+                $category->metadata()->create($request['metadata']);
+            }
         }
         return $category;
     }

@@ -599,7 +599,7 @@ var Form_Form = function () {
                 data[property] = this[property];
             }
 
-            return data;
+            return { data: data };
         }
 
         /**

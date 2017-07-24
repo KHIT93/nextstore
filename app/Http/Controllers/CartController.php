@@ -61,7 +61,7 @@ class CartController extends Controller
     {
         $cart = $this->getCurrentCart();
         $cart->updateItem($request['product_id'], $request['qty']);
-        return ($request->expectsJson() ? $cart : redirect(route('cart.show')));
+        return ($request->expectsJson() ? $cart->fresh() : redirect(route('cart.show')));
     }
 
     /**
@@ -74,7 +74,7 @@ class CartController extends Controller
     {
         $cart = $this->getCurrentCart();
         $cart->deleteItem($request['product_id']);
-        return ($request->expectsJson() ? $cart : redirect(route('cart.show')));
+        return ($request->expectsJson() ? $cart->fresh() : redirect(route('cart.show')));
     }
 
     /**
@@ -93,7 +93,7 @@ class CartController extends Controller
         $cart = null;
         if(!session()->has('cart_id'))
         {
-            $cart = Cart::create();
+            $cart = Cart::create(['user_id' => auth()->id()]);
             session(['cart_id' => $cart->id]);
         }
         return (is_null($cart) ? Cart::where('id', '=', session('cart_id'))->first() :  $cart);

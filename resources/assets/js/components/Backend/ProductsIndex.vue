@@ -17,7 +17,7 @@
                         <td>{{ product.name }}</td>
                         <td v-if="product.category_id != null">{{ product.category.name }}</td>
                         <td v-if="product.category_id == null"></td>
-                        <td>{{ product.price }}</td>
+                        <td>{{ product.price_formatted }}</td>
                         <td>
                             <v-btn icon :to="{ name: 'products.edit', params: { id: product.id }}" router>
                                 <v-icon>edit</v-icon>

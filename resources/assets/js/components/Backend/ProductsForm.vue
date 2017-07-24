@@ -43,6 +43,20 @@
                             </v-layout>
                             <v-layout>
                                 <v-flex xs12>
+                                    <v-select
+                                        :items="taxes"
+                                        v-model="form.tax_id"
+                                        label="Select a tax"
+                                        dark
+                                        single-line
+                                        auto
+                                        hint="Select the tax that applies to your product"
+                                        persistent-hint
+                                    />
+                                </v-flex>
+                            </v-layout>
+                            <v-layout>
+                                <v-flex xs12>
                                     <v-text-field
                                         name="teaser"
                                         label="Teaser"
@@ -169,12 +183,14 @@
 <script>
     import Form from '../../classes/Form';
     import Category from '../../classes/Category';
+    import Tax from '../../classes/Tax';
     import DropZone from 'vue2-dropzone';
     import ProductImage from './ProductImage.vue';
     export default {
         props: ['id'],
         mounted() {
             this.getCategories();
+            this.getTaxes();
             if(this.id)
             {
                 this.form.id = this.id;
@@ -193,14 +209,16 @@
                     body: '',
                     price: 0,
                     image_id: '',
+                    tax_id: null,
                     id: null,
                     metadata: {
-                        title: null,
-                        keywords: null,
-                        description: null
+                        title: '',
+                        keywords: '',
+                        description: ''
                     }
                 }),
                 categories: [],
+                taxes: [],
                 active: null,
                 show_remove_link: false,
                 csrfToken: window.Laravel.csrfToken,
@@ -234,6 +252,14 @@
                 axios.get('/webapi/categories?nochildren&noparent').then(function(response){
                     response.data.forEach(function(item, index){
                         this.categories.push(new Category(item.id, item.name));
+                    }.bind(this));
+                }.bind(this));
+            },
+            getTaxes()
+            {
+                axios.get('/webapi/taxes').then(function(response){
+                    response.data.forEach(function(item, index){
+                        this.taxes.push(new Tax(item.id, item.name));
                     }.bind(this));
                 }.bind(this));
             },
