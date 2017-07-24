@@ -66,7 +66,9 @@ const app = new Vue({
                 { icon: 'description', title: 'Web pages', link: '/pages'},
                 { icon: 'description', title: 'Menu', link: '/menu'},
             ]},
-            { icon: 'settings', title: 'Configuration', link: '/configuration'},
+            { icon: 'settings', title: 'Configuration', model: false, children: [
+                { icon: 'settings', title: 'Taxes', link: '/configuration/taxes'}
+            ]},
         ],
         drawer: true,
         mini: false,
