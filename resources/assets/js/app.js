@@ -7,11 +7,15 @@
 
 require('./bootstrap');
 
-try {
+/*try {
     window.$ = window.jQuery = require('jquery');
 
     require('bootstrap');
-} catch (e) {}
+} catch (e) {}*/
+
+import ProductCard from './components/Products/ProductCard.vue';
+import Product from './components/Products/Product.vue';
+import Cart from './components/Cart/Cart.vue';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -20,5 +24,10 @@ try {
  */
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    components: {
+        'v-product-card': ProductCard,
+        'v-product': Product,
+        'v-cart': Cart
+    }
 });

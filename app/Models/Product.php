@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Support\HasMetadata;
 use App\Models\Support\HasImages;
+use App\Models\CartItem;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -29,5 +30,10 @@ class Product extends Model
     public function image()
     {
         return $this->morphOne('App\Models\Image', 'entity');
+    }
+
+    public function cart_items()
+    {
+        return $this->hasMany(CartItem::class);
     }
 }

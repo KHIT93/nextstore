@@ -13,9 +13,9 @@ class ProductsSeeder extends Seeder
      */
     public function run()
     {
-        factory(Product::class)->create(['name' => 'Computer case', 'category_id' => Category::whereName('Cases')->first()->id]);
-        factory(Product::class)->create(['name' => 'Fancy computer case', 'category_id' => Category::whereName('Cases')->first()->id]);
-        factory(Product::class)->create(['name' => 'Core i7 7700K', 'category_id' => Category::whereName('Intel')->first()->id]);
+        factory(Product::class)->create(['name' => 'Computer case', 'price' => 10000, 'category_id' => Category::whereName('Cases')->first()->id]);
+        factory(Product::class)->create(['name' => 'Fancy computer case', 'price' => 40000, 'category_id' => Category::whereName('Cases')->first()->id]);
+        factory(Product::class)->create(['name' => 'Core i7 7700K', 'price' => 25000, 'category_id' => Category::whereName('Intel')->first()->id]);
         factory(Product::class)->create(['name' => 'Core i5 6600K', 'category_id' => Category::whereName('Intel')->first()->id]);
         factory(Product::class)->create(['name' => 'Ryzen R7-1800X', 'category_id' => Category::whereName('AMD')->first()->id]);
         factory(Product::class)->create(['name' => 'Ryzen Threadripper', 'category_id' => Category::whereName('AMD')->first()->id]);

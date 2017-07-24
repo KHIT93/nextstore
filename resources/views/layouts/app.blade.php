@@ -8,10 +8,11 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <title>@yield('title', config('app.name', 'Laravel'))</title>
 
     <!-- Font library and icon pack -->
     <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -24,7 +25,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+        <nav class="navbar navbar-toggleable-md navbar-inverse bg-danger">
             <div class="container">
                 <div class="navbar-header">
 
@@ -41,12 +42,20 @@
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav">
-                        &nbsp;
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
                     </ul>
-
+                    <form class="form-inline mt-2 mt-md-0" action="/search" method="POST">
+                        {!! csrf_field() !!}
+                        <input class="form-control mr-sm-2" type="text" name="search" placeholder="Search">
+                        <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
                     <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item pull-xs-right">
+                            <a class="nav-link" href="/cart"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Cart</a>
+                        </li>
                         <!-- Authentication Links -->
                         @if (Auth::guest())
                             <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
@@ -78,5 +87,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js" integrity="sha256-ifihHN6L/pNU1ZQikrAb7CnyMBvisKG3SUAab0F3kVU=" crossorigin="anonymous"></script>
 </body>
 </html>

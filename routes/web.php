@@ -50,3 +50,12 @@ Route::prefix('webapi')->group(function(){
         Route::delete('/images/{image}', 'ImagesController@destroy');
     });
 });
+
+Route::get('/shop', 'CategoriesController@index')->name('shop');
+Route::get('/categories/{category}', 'CategoriesController@show')->name('category.show');
+Route::get('/products/{product}', 'ProductsController@show')->name('products.show');
+
+Route::get('/cart', 'CartController@show')->name('cart.show');
+Route::post('/cart','CartController@store')->name('cart.store');
+Route::patch('/cart','CartController@updateItem')->name('cart.item.update');
+Route::delete('/cart','CartController@deleteItem')->name('cart.item.delete');

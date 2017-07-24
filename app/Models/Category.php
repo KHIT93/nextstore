@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Support\HasMetadata;
+use App\Models\Product;
 use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
@@ -29,6 +30,11 @@ class Category extends Model
     public function hasChildren()
     {
         return $this->chilren->count();
+    }
+
+    public function products()
+    {
+        return $this->hasMany(Product::class);
     }
 
 }

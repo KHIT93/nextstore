@@ -74,7 +74,7 @@ class ManageProductsTest extends TestCase
     public function a_single_product_can_be_deleted()
     {
         $this->signIn();
-        $productToDelete = create('App\Models\Product');
+        $productToDelete = create('App\Models\Product', ['name' => 'Product-To-Delete']);
 
         $productToKeep = create('App\Models\Product');
 

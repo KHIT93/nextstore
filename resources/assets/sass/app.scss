@@ -7,3 +7,37 @@
 
 // Bootstrap
 @import "node_modules/bootstrap/scss/bootstrap";
+
+.card.product {
+    padding: .75rem;
+    margin-bottom: 2rem;
+}
+
+.text-muted {
+    color: #777777 !important;
+}
+
+
+@for $i from 1 through 100 {
+    .mt#{$i} {
+        margin-top: 0rem + $i;
+    }
+}
+
+@for $i from 1 through 100 {
+    .mr#{$i} {
+        margin-right: 0rem + $i;
+    }
+}
+
+@for $i from 1 through 100 {
+    .ml#{$i} {
+        margin-left: 0rem + $i;
+    }
+}
+
+@for $i from 1 through 100 {
+    .mb#{$i} {
+        margin-bottom: 0rem + $i;
+    }
+}
