@@ -29568,7 +29568,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "card-text"
   }, [_vm._v(_vm._s(_vm.product.teaser))]), _vm._v(" "), _c('p', {
     staticClass: "card-text"
-  }, [_vm._v("$" + _vm._s(_vm.product.price))]), _vm._v(" "), _c('div', {
+  }, [_vm._v(_vm._s(_vm.product.price_formatted))]), _vm._v(" "), _c('div', {
     staticClass: "row"
   }, [_c('div', {
     staticClass: "col-sm-6"
@@ -29795,7 +29795,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('h4', {
     staticClass: "mt2 h4"
-  }, [_vm._v("$" + _vm._s(_vm.product.price))]), _vm._v(" "), _c('input', {
+  }, [_vm._v(_vm._s(_vm.product.price_formatted))]), _vm._v(" "), _c('input', {
     directives: [{
       name: "model",
       rawName: "v-model",
@@ -29853,9 +29853,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.form.qty = $event.target.value
-      },
-      "blur": function($event) {
-        _vm.$forceUpdate()
       }
     }
   }), _vm._v(" "), _c('span', {
@@ -30209,9 +30206,6 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "input": function($event) {
         if ($event.target.composing) { return; }
         _vm.form.qty = $event.target.value
-      },
-      "blur": function($event) {
-        _vm.$forceUpdate()
       }
     }
   }), _vm._v(" "), _c('span', {

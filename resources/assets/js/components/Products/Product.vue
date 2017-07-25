@@ -8,7 +8,7 @@
                 <div class="col-sm-5">
                     <h1 class="h1">{{ product.name }}</h1>
                     <form action="/cart" method="POST" @submit.prevent="save">
-                        <h4 class="mt2 h4">${{ product.price }}</h4>
+                        <h4 class="mt2 h4">{{ product.price_formatted }}</h4>
                         <input type="hidden" name="product_id" v-model="form.product_id"/>
                         <div class="input-group" style="max-width: 150px;">
                             <span class="input-group-btn">

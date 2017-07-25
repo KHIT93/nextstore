@@ -16,8 +16,7 @@ class CartController extends Controller
     public function store(Request $request)
     {
         $cart = $this->getCurrentCart();
-
-        $cart->addItem($request['product_id'], $request['qty']);
+        $cart->addItem($request['data']['product_id'], $request['data']['qty']);
         //$cart->fresh()->calculateTotal();
 
         return ($request->expectsJson() ? $cart : redirect(route('cart.show')));
@@ -60,7 +59,7 @@ class CartController extends Controller
     public function updateItem(Request $request)
     {
         $cart = $this->getCurrentCart();
-        $cart->updateItem($request['product_id'], $request['qty']);
+        $cart->updateItem($request['data']['product_id'], $request['data']['qty']);
         return ($request->expectsJson() ? $cart->fresh() : redirect(route('cart.show')));
     }
 
@@ -73,7 +72,7 @@ class CartController extends Controller
     public function deleteItem(Request $request)
     {
         $cart = $this->getCurrentCart();
-        $cart->deleteItem($request['product_id']);
+        $cart->deleteItem($request['data']['product_id']);
         return ($request->expectsJson() ? $cart->fresh() : redirect(route('cart.show')));
     }
 

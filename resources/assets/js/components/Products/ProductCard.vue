@@ -3,7 +3,7 @@
         <img data-src="holder.js/100px280/thumb" :alt="product.name">
         <p class="card-text"><strong>{{ product.name }}</strong></p>
         <p class="card-text">{{ product.teaser }}</p>
-        <p class="card-text">${{ product.price }}</p>
+        <p class="card-text">{{ product.price_formatted }}</p>
         <div class="row">
             <div class="col-sm-6">
                 <form action="/cart" method="POST" @submit.prevent="save">

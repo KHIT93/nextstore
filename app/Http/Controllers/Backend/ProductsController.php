@@ -27,10 +27,10 @@ class ProductsController extends Controller
      */
     public function store(CreateProductRequest $request)
     {
-        $product = Product::create($request->all());
-        if($request['metadata'])
+        $product = Product::create($request['data']);
+        if($request['data']['metadata'])
         {
-            $product->metadata()->create($request['metadata']);
+            $product->metadata()->create($request['data']['metadata']);
         }
 
         return $product;
@@ -56,16 +56,16 @@ class ProductsController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $product->update($request->all());
-        if($request['metadata'])
+        $product->update($request['data']);
+        if($request['data']['metadata'])
         {
             if($product->metadata)
             {
-                $product->metadata()->update($request['metadata']);
+                $product->metadata()->update($request['data']['metadata']);
             }
             else
             {
-                $product->metadata()->create($request['metadata']);
+                $product->metadata()->create($request['data']['metadata']);
             }
         }
 

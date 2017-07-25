@@ -26,7 +26,7 @@ class TaxesController extends Controller
      */
     public function store(Request $request)
     {
-        return Tax::create($request->all());
+        return Tax::create($request['data']);
     }
 
     /**
@@ -49,7 +49,7 @@ class TaxesController extends Controller
      */
     public function update(Request $request, Tax $tax)
     {
-        $tax->update($request->all());
+        $tax->update($request['data']);
         return $tax->fresh();
     }
 

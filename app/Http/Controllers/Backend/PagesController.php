@@ -27,9 +27,9 @@ class PagesController extends Controller
     public function store(Request $request)
     {
         $page = Page::create($request->all());
-        if($request['metadata'])
+        if($request['data']['metadata'])
         {
-            $page->metadata()->create($request['metadata']);
+            $page->metadata()->create($request['data']['metadata']);
         }
 
         return $page;
@@ -56,15 +56,15 @@ class PagesController extends Controller
     public function update(Request $request, Page $page)
     {
         $page->update($request->all());
-        if($request['metadata'])
+        if($request['data']['metadata'])
         {
             if($page->metadata)
             {
-                $page->metadata()->save($request['metadata']);
+                $page->metadata()->save($request['data']['metadata']);
             }
             else
             {
-                $page->metadata()->create($request['metadata']);
+                $page->metadata()->create($request['data']['metadata']);
             }
         }
 
