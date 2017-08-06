@@ -65,3 +65,12 @@ Route::get('/cart', 'CartController@show')->name('cart.show');
 Route::post('/cart','CartController@store')->name('cart.store');
 Route::patch('/cart','CartController@updateItem')->name('cart.item.update');
 Route::delete('/cart','CartController@deleteItem')->name('cart.item.delete');
+
+Route::get('/checkout', 'CheckoutController@signin')->name('checkout.signin');
+Route::post('/checkout/register', 'CheckoutController@register')->name('checkout.register');
+Route::get('/checkout/address/billing', 'CheckoutController@billingAddress')->name('checkout.address.billing');
+Route::post('/checkout/address/billing', 'CheckoutController@billingAddressPostback')->name('checkout.billing.post');
+Route::get('/checkout/address/shipping', 'CheckoutController@shippingAddress')->name('checkout.address.shipping');
+Route::post('/checkout/address/shipping', 'CheckoutController@shippingAddressPostback')->name('checkout.shipping.post');
+Route::get('/checkout/address/create', 'CheckoutController@createAddress')->name('checkout.address.create');
+Route::post('/checkout/address/create', 'CheckoutController@storeAddress')->name('checkout.address.store');
