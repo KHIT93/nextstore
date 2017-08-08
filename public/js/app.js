@@ -29478,7 +29478,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Products/ProductCard.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Products/ProductCard.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProductCard.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29665,7 +29665,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Products/Product.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Products/Product.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Product.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -29903,7 +29903,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Cart/Cart.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Cart/Cart.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Cart.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -30030,7 +30030,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Cart/CartItem.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Cart/CartItem.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CartItem.vue: functional components are not supported with templates, they should use render functions.")}
 

@@ -41085,7 +41085,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/Home.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/Home.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Home.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41173,7 +41173,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/Orders.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/Orders.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] Orders.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41253,7 +41253,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/ProductsIndex.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/ProductsIndex.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProductsIndex.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41490,7 +41490,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/ProductsForm.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/ProductsForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProductsForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -41856,7 +41856,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/ProductImage.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/ProductImage.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] ProductImage.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42314,7 +42314,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/CategoriesIndex.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/CategoriesIndex.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CategoriesIndex.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42547,7 +42547,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/CategoriesForm.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/CategoriesForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] CategoriesForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -42964,7 +42964,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/PagesIndex.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/PagesIndex.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PagesIndex.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43200,7 +43200,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/PagesForm.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/PagesForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] PagesForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43601,7 +43601,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/TaxConfigurationIndex.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/TaxConfigurationIndex.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TaxConfigurationIndex.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -43832,7 +43832,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/TaxForm.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/TaxForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] TaxForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44052,7 +44052,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/LoginForm.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/LoginForm.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] LoginForm.vue: functional components are not supported with templates, they should use render functions.")}
 
@@ -44289,7 +44289,7 @@ var Component = __webpack_require__(1)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/Kenneth/Code/nextstore/resources/assets/js/components/Backend/NotFound.vue"
+Component.options.__file = "/Users/kenneth/Code/nextstore/resources/assets/js/components/Backend/NotFound.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
 if (Component.options.functional) {console.error("[vue-loader] NotFound.vue: functional components are not supported with templates, they should use render functions.")}
 
